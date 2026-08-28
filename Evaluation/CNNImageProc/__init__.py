@@ -1,0 +1,1 @@
+"""CNNImageProc evaluation pipeline package."""

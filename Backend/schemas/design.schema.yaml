@@ -1,0 +1,99 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://gentas.local/schemas/backend-design.schema.yaml"
+title: Gentas backend design
+type: object
+additionalProperties: false
+required:
+  - design
+  - buffers
+  - stages
+properties:
+  design:
+    type: object
+    additionalProperties: false
+    required: [name, bitstream]
+    properties:
+      name:
+        type: string
+        minLength: 1
+      bitstream:
+        type: string
+        minLength: 1
+      iterations:
+        type: integer
+        minimum: 1
+        default: 1000
+      warmup:
+        type: integer
+        minimum: 0
+        default: 100
+      kernel_timeout_seconds:
+        type: number
+        exclusiveMinimum: 0
+        default: 5.0
+  buffers:
+    type: object
+    minProperties: 2
+    additionalProperties:
+      type: object
+      additionalProperties: false
+      required: [shape, dtype]
+      properties:
+        shape:
+          type: array
+          minItems: 1
+          items:
+            type: integer
+            minimum: 1
+        dtype:
+          type: string
+          enum: [int8, uint8, int16, uint16, int32, uint32, float32, float64]
+        initial_data:
+          type: array
+  stages:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      additionalProperties: false
+      required: [name, ip, input, output]
+      properties:
+        name:
+          type: string
+          minLength: 1
+        ip:
+          type: string
+          minLength: 1
+        input:
+          type: string
+          minLength: 1
+        output:
+          type: string
+          minLength: 1
+        gpp_callable:
+          type: string
+          description: Import path in module:function form.
+        registers:
+          type: object
+          additionalProperties: false
+          properties:
+            control:
+              type: integer
+              minimum: 0
+              default: 0
+            input_low:
+              type: integer
+              minimum: 0
+              default: 16
+            input_high:
+              type: integer
+              minimum: 0
+              default: 20
+            output_low:
+              type: integer
+              minimum: 0
+              default: 28
+            output_high:
+              type: integer
+              minimum: 0
+              default: 32

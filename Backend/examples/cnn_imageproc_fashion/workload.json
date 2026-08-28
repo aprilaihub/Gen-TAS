@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "workload": "cnn_imageproc_fashionmnist",
+  "top_function": "cnn_imageproc_top",
+  "dtype": "fixed16_q4_12",
+  "required_source_files": [
+    "workload.json",
+    "src/lib.hpp",
+    "src/weights.hpp",
+    "src/top.cpp",
+    "src/tb.cpp",
+    "src/sub_1_conv1_feature_extract.cpp",
+    "src/sub_2_relu_pool1.cpp",
+    "src/sub_3_conv2_feature_extract.cpp",
+    "src/sub_4_relu_pool2.cpp",
+    "src/sub_5_dense_classifier.cpp"
+  ],
+  "header_files": ["src/lib.hpp", "src/weights.hpp"],
+  "top_includes": ["lib.hpp", "weights.hpp"],
+  "test_comparison": "exact",
+  "stages": {
+    "S1": {
+      "function": "conv1_feature_extract",
+      "source": "src/sub_1_conv1_feature_extract.cpp",
+      "call": "conv1_feature_extract({input}, conv1_weights, conv1_bias, {output})",
+      "role": "convolution",
+      "block": 1,
+      "input": {
+        "name": "image",
+        "cpp_type": "data_t",
+        "bits_per_element": 16,
+        "length": 784,
+        "shape_expression": "IMG_SIZE",
+        "semantic": "fashion_mnist_image",
+        "test_expression": "data_t((i % 17) - 8) / data_t(16)"
+      },
+      "output": {
+        "name": "conv1_out",
+        "cpp_type": "data_t",
+        "bits_per_element": 16,
+        "length": 12544,
+        "shape_expression": "CONV1_SIZE",
+        "semantic": "conv1_feature_map"
+      }
+    },
+    "S2": {
+      "function": "relu_pool1",
+      "source": "src/sub_2_relu_pool1.cpp",
+      "call": "relu_pool1({input}, {output})",
+      "role": "activation_pooling",
+      "block": 1,
+      "input": {
+        "name": "conv1_out",
+        "cpp_type": "data_t",
+        "bits_per_element": 16,
+        "length": 12544,
+        "shape_expression": "CONV1_SIZE",
+        "semantic": "conv1_feature_map",
+        "test_expression": "data_t((i % 17) - 8) / data_t(16)"
+      },
+      "output": {
+        "name": "pool1_out",
+        "cpp_type": "data_t",
+        "bits_per_element": 16,
+        "length": 3136,
+        "shape_expression": "POOL1_SIZE",
+        "semantic": "pool1_feature_map"
+      }
+    },
+    "S3": {
+      "function": "conv2_feature_extract",
+      "source": "src/sub_3_conv2_feature_extract.cpp",
+      "call": "conv2_feature_extract({input}, conv2_weights, conv2_bias, {output})",
+      "role": "convolution",
+      "block": 2,
+      "input": {
+        "name": "pool1_out",
+        "cpp_type": "data_t",
+        "bits_per_element": 16,
+        "length": 3136,
+        "shape_expression": "POOL1_SIZE",
+        "semantic": "pool1_feature_map",
+        "test_expression": "data_t((i % 17) - 8) / data_t(16)"
+      },
+      "output": {
+        "name": "conv2_out",
+        "cpp_type": "data_t",
+        "bits_per_element": 16,
+        "length": 6272,
+        "shape_expression": "CONV2_SIZE",
+        "semantic": "conv2_feature_map"
+      }
+    },
+    "S4": {
+      "function": "relu_pool2",
+      "source": "src/sub_4_relu_pool2.cpp",
+      "call": "relu_pool2({input}, {output})",
+      "role": "activation_pooling",
+      "block": 2,
+      "input": {
+        "name": "conv2_out",
+        "cpp_type": "data_t",
+        "bits_per_element": 16,
+        "length": 6272,
+        "shape_expression": "CONV2_SIZE",
+        "semantic": "conv2_feature_map",
+        "test_expression": "data_t((i % 17) - 8) / data_t(16)"
+      },
+      "output": {
+        "name": "pool2_out",
+        "cpp_type": "data_t",
+        "bits_per_element": 16,
+        "length": 1568,
+        "shape_expression": "POOL2_SIZE",
+        "semantic": "pool2_feature_map"
+      }
+    },
+    "S5": {
+      "function": "dense_classifier",
+      "source": "src/sub_5_dense_classifier.cpp",
+      "call": "dense_classifier({input}, dense_weights, dense_bias, {output})",
+      "role": "classifier",
+      "block": 3,
+      "input": {
+        "name": "pool2_out",
+        "cpp_type": "data_t",
+        "bits_per_element": 16,
+        "length": 1568,
+        "shape_expression": "POOL2_SIZE",
+        "semantic": "pool2_feature_map",
+        "test_expression": "data_t((i % 17) - 8) / data_t(16)"
+      },
+      "output": {
+        "name": "logits",
+        "cpp_type": "data_t",
+        "bits_per_element": 16,
+        "length": 10,
+        "shape_expression": "NUM_CLASSES",
+        "semantic": "fashion_mnist_logits"
+      }
+    }
+  },
+  "partitions": {
+    "FEATURE_FPGA_DENSE_GPP": {
+      "fpga_subfunctions": ["S1", "S2", "S3", "S4"],
+      "gpp_subfunctions": ["S5"],
+      "summary": "Both convolution/pooling feature blocks on FPGA, dense classifier on GPP."
+    },
+    "ALL_FPGA": {
+      "fpga_subfunctions": ["S1", "S2", "S3", "S4", "S5"],
+      "gpp_subfunctions": [],
+      "summary": "All Fashion-MNIST inference stages on FPGA."
+    },
+    "S1S2_FPGA_REST_GPP": {
+      "fpga_subfunctions": ["S1", "S2"],
+      "gpp_subfunctions": ["S3", "S4", "S5"],
+      "summary": "First convolution/pooling block on FPGA."
+    },
+    "S3S4_FPGA_ONLY": {
+      "fpga_subfunctions": ["S3", "S4"],
+      "gpp_subfunctions": ["S1", "S2", "S5"],
+      "summary": "Second convolution/pooling block on FPGA."
+    },
+    "S3S5_FPGA_AFTER_BLOCK1_GPP": {
+      "fpga_subfunctions": ["S3", "S4", "S5"],
+      "gpp_subfunctions": ["S1", "S2"],
+      "summary": "Second feature block and dense classifier on FPGA."
+    },
+    "DENSE_FPGA_ONLY": {
+      "fpga_subfunctions": ["S5"],
+      "gpp_subfunctions": ["S1", "S2", "S3", "S4"],
+      "summary": "Dense classifier only on FPGA."
+    },
+    "S1S3_FPGA_REST_GPP": {
+      "fpga_subfunctions": ["S1", "S2", "S3"],
+      "gpp_subfunctions": ["S4", "S5"],
+      "summary": "Boundary after the second convolution."
+    },
+    "S2_FPGA_ONLY": {
+      "fpga_subfunctions": ["S2"],
+      "gpp_subfunctions": ["S1", "S3", "S4", "S5"],
+      "summary": "First activation/pooling stage only on FPGA."
+    },
+    "ALL_GPP": {
+      "fpga_subfunctions": [],
+      "gpp_subfunctions": ["S1", "S2", "S3", "S4", "S5"],
+      "summary": "CPU/GPP baseline; no FPGA hardware is generated."
+    }
+  },
+  "partition_priority": [
+    "FEATURE_FPGA_DENSE_GPP",
+    "ALL_FPGA",
+    "S1S2_FPGA_REST_GPP",
+    "S3S4_FPGA_ONLY",
+    "S3S5_FPGA_AFTER_BLOCK1_GPP",
+    "DENSE_FPGA_ONLY",
+    "S1S3_FPGA_REST_GPP",
+    "S2_FPGA_ONLY",
+    "ALL_GPP"
+  ]
+}

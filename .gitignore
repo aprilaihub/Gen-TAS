@@ -1,0 +1,29 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.Xil/
+*.jou
+*.log
+*.str
+
+# Generated Gen-TAS state and model responses
+GUI/runs/
+Evaluation/CNNImageProc/Sessions/
+Evaluation/CNNImageProc/Outputs/
+Backend/examples/*/generated/
+
+# HLS, Vivado, and exported board artifacts
+Backend/**/build/
+Backend/artifacts/generated/
+Backend/artifacts/hardware_exports/
+*.bit
+*.hwh
+*.xsa
+*.xo
+*.zip
+
+# Keep the source dataset archive required by the Fashion-MNIST runner.
+!Backend/examples/cnn_imageproc_fashion/FashionMNIST_data.zip

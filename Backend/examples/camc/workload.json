@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "workload": "camc",
+  "top_function": "camc_top",
+  "dtype": "mixed_integer",
+  "required_source_files": [
+    "workload.json",
+    "src/lib.hpp",
+    "src/weights.hpp",
+    "src/top.cpp",
+    "src/tb.cpp",
+    "src/sub_1_axis_initialisation.cpp",
+    "src/sub_2_matrix_generation.cpp",
+    "src/sub_3_array_product.cpp"
+  ],
+  "header_files": [
+    "src/lib.hpp",
+    "src/weights.hpp"
+  ],
+  "top_includes": [
+    "lib.hpp"
+  ],
+  "test_comparison": "exact",
+  "stages": {
+    "S1": {
+      "function": "axis_initialisation",
+      "source": "src/sub_1_axis_initialisation.cpp",
+      "call": "axis_initialisation({input}, {output})",
+      "role": "coordinate_quantization",
+      "block": 1,
+      "input": {
+        "name": "samples",
+        "cpp_type": "sample_t",
+        "bits_per_element": 20,
+        "length": 1600,
+        "shape_expression": "CAMC_INPUT_SIZE",
+        "semantic": "packed_x_y_samples",
+        "test_expression": "sample_t((i * 7919 + 12345) & 0xFFFFF)"
+      },
+      "output": {
+        "name": "coordinates",
+        "cpp_type": "coordinate_t",
+        "bits_per_element": 8,
+        "length": 1600,
+        "shape_expression": "CAMC_COORDINATE_SIZE",
+        "semantic": "quantized_x_y_coordinates"
+      }
+    },
+    "S2": {
+      "function": "matrix_generation",
+      "source": "src/sub_2_matrix_generation.cpp",
+      "call": "matrix_generation({input}, {output})",
+      "role": "histogram_generation",
+      "block": 2,
+      "input": {
+        "name": "coordinates",
+        "cpp_type": "coordinate_t",
+        "bits_per_element": 8,
+        "length": 1600,
+        "shape_expression": "CAMC_COORDINATE_SIZE",
+        "semantic": "quantized_x_y_coordinates",
+        "test_expression": "coordinate_t((i * 37 + 1) % CAMC_GRID_SIZE)"
+      },
+      "output": {
+        "name": "histogram",
+        "cpp_type": "histogram_t",
+        "bits_per_element": 14,
+        "length": 10000,
+        "shape_expression": "CAMC_HISTOGRAM_SIZE",
+        "semantic": "constellation_histogram"
+      }
+    },
+    "S3": {
+      "function": "array_product",
+      "source": "src/sub_3_array_product.cpp",
+      "call": "array_product({input}, {output})",
+      "role": "template_scoring",
+      "block": 3,
+      "input": {
+        "name": "histogram",
+        "cpp_type": "histogram_t",
+        "bits_per_element": 14,
+        "length": 10000,
+        "shape_expression": "CAMC_HISTOGRAM_SIZE",
+        "semantic": "constellation_histogram",
+        "test_expression": "histogram_t((i * 13 + 7) & 0x3FFF)"
+      },
+      "output": {
+        "name": "scores",
+        "cpp_type": "score_t",
+        "bits_per_element": 64,
+        "length": 4,
+        "shape_expression": "CAMC_SCORE_COUNT",
+        "semantic": "modulation_class_scores"
+      }
+    }
+  },
+  "partitions": {
+    "ALL_FPGA": {
+      "fpga_subfunctions": ["S1", "S2", "S3"],
+      "gpp_subfunctions": [],
+      "summary": "All CAMC coordinate, histogram, and scoring stages on FPGA."
+    },
+    "AB_FPGA_C_GPP": {
+      "fpga_subfunctions": ["S1", "S2"],
+      "gpp_subfunctions": ["S3"],
+      "summary": "Coordinate quantization and histogram generation on FPGA."
+    },
+    "A_GPP_BC_FPGA": {
+      "fpga_subfunctions": ["S2", "S3"],
+      "gpp_subfunctions": ["S1"],
+      "summary": "Histogram generation and template scoring on FPGA."
+    },
+    "A_FPGA_BC_GPP": {
+      "fpga_subfunctions": ["S1"],
+      "gpp_subfunctions": ["S2", "S3"],
+      "summary": "Coordinate quantization only on FPGA."
+    },
+    "B_FPGA_AC_GPP": {
+      "fpga_subfunctions": ["S2"],
+      "gpp_subfunctions": ["S1", "S3"],
+      "summary": "Histogram generation only on FPGA; a communication-sensitive control placement."
+    },
+    "C_FPGA_ONLY": {
+      "fpga_subfunctions": ["S3"],
+      "gpp_subfunctions": ["S1", "S2"],
+      "summary": "Template scoring only on FPGA."
+    },
+    "ALL_GPP": {
+      "fpga_subfunctions": [],
+      "gpp_subfunctions": ["S1", "S2", "S3"],
+      "summary": "CPU/GPP baseline; no FPGA hardware is generated."
+    }
+  },
+  "partition_priority": [
+    "ALL_FPGA",
+    "AB_FPGA_C_GPP",
+    "A_GPP_BC_FPGA",
+    "A_FPGA_BC_GPP",
+    "B_FPGA_AC_GPP",
+    "C_FPGA_ONLY",
+    "ALL_GPP"
+  ]
+}

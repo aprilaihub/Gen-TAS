@@ -1,0 +1,55 @@
+{
+  "updated_at": "2026-08-09",
+  "default_provider": "openai",
+  "defaults": {
+    "strategy": "gpt-5.6-sol",
+    "top_generation": "gpt-5.6-sol",
+    "pynq_generation": "gpt-5.6-sol"
+  },
+  "providers": {
+    "openai": {
+      "recommended": "gpt-5.6-sol",
+      "options": [
+        "gpt-5.6-sol",
+        "gpt-5.6",
+        "gpt-5.6-terra",
+        "gpt-5.6-luna",
+        "gpt-4.1"
+      ],
+      "notes": "gpt-5.6 is documented as an alias that routes to gpt-5.6-sol."
+    },
+    "google": {
+      "recommended": "gemini-3.6-flash",
+      "options": [
+        "gemini-3.6-flash",
+        "gemini-3.5-flash-lite",
+        "gemini-3.1-pro-preview"
+      ]
+    },
+    "anthropic": {
+      "recommended": "claude-fable-5",
+      "stable_alternative": "claude-opus-4-8",
+      "options": [
+        "claude-fable-5",
+        "claude-opus-4-8",
+        "claude-sonnet-5",
+        "claude-haiku-4-5"
+      ],
+      "notes": "Use the stable alternative if the newest Anthropic model is unavailable on the account during benchmarking."
+    }
+  },
+  "source_urls": {
+    "openai": [
+      "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+      "https://developers.openai.com/api/docs/guides/latest-model"
+    ],
+    "google": [
+      "https://ai.google.dev/gemini-api/docs/latest-model",
+      "https://ai.google.dev/gemini-api/docs/models/gemini-3.6-flash"
+    ],
+    "anthropic": [
+      "https://platform.claude.com/docs/en/about-claude/models/overview",
+      "https://support.claude.com/en/articles/12138966-release-notes"
+    ]
+  }
+}

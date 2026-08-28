@@ -1,0 +1,3180 @@
+{
+  "schema_version": "lightcnn-active-kb-v1",
+  "knowledge_base_version": "lightcnn-partition-specific:36c0a6f53ca9c39cd5a1b8dcf27257497b127945cce4120bd001c3f5e32e508d",
+  "generated_at": "2026-08-10T20:35:46.738157+00:00",
+  "source_campaign": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements",
+  "source_preboard": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements",
+  "status": "active",
+  "supersedes": [
+    "Evaluation/LightCNN/Dataset/Original/lightcnn_experiments.jsonl",
+    "Evaluation/LightCNN/Dataset/Preprocessed/lightcnn_evidence_preprocessed.json"
+  ],
+  "profile_count": 8,
+  "task_count": 3,
+  "hardware_implementation_count": 7,
+  "profiles": [
+    {
+      "record_id": "lightcnn:GGG:partition-specific-v1",
+      "partition_id": "ABC_GPP",
+      "placement_id": "GGG",
+      "workload": "LightCNN",
+      "board": "AMD Xilinx ZCU104",
+      "platform": "Linux-6.6.10-xilinx-v2024.1-gfc1c20f0a1a9-aarch64-with-glibc2.35",
+      "topology": "partition_specific_fused",
+      "selection_eligible": false,
+      "selection_note": "Software-only baseline; it has no FPGA top to generate.",
+      "fpga_subfunctions": [],
+      "gpp_subfunctions": [
+        "A",
+        "B",
+        "C"
+      ],
+      "summary_metrics": {
+        "pynq_mean_latency_ms": 1.65486978,
+        "pynq_median_latency_ms": 1.652335,
+        "pynq_std_latency_ms": 0.062495056525709296,
+        "pynq_min_latency_ms": 1.59701,
+        "pynq_max_latency_ms": 3.46045,
+        "pynq_p95_latency_ms": 1.6882605,
+        "pynq_p99_latency_ms": 1.7128501999999999,
+        "iterations": 1000,
+        "warm_up_iterations": 100,
+        "golden_vector_verification_pass": true,
+        "golden_vector_count": 9,
+        "vivado_clb_luts": null,
+        "vivado_logic_luts": null,
+        "vivado_clb_registers_ff": null,
+        "vivado_bram18_equiv": null,
+        "vivado_dsp": null,
+        "vivado_uram": null,
+        "vivado_wns_ns": null,
+        "vivado_fmax_mhz": null,
+        "vivado_timing_constraints_met": null,
+        "vivado_total_on_chip_power_w": null,
+        "vivado_dynamic_power_w": null,
+        "vivado_pl_power_w": null
+      },
+      "pynq_board": {
+        "schema_version": "lightcnn-partition-specific-results-v1",
+        "latency_ns": {
+          "mean_ns": 1654869.78,
+          "median_ns": 1652335.0,
+          "std_ns": 62495.0565257093,
+          "min_ns": 1597010.0,
+          "max_ns": 3460450.0,
+          "p95_ns": 1688260.5,
+          "p99_ns": 1712850.2
+        },
+        "breakdown_ns": {
+          "GPP_A": {
+            "mean_ns": 1320228.51,
+            "median_ns": 1317300.0,
+            "std_ns": 61048.030296479665,
+            "min_ns": 1274150.0,
+            "max_ns": 3095120.0,
+            "p95_ns": 1355692.0,
+            "p99_ns": 1373135.8
+          },
+          "GPP_B": {
+            "mean_ns": 240616.05,
+            "median_ns": 239495.0,
+            "std_ns": 5080.985721048623,
+            "min_ns": 233530.0,
+            "max_ns": 331540.0,
+            "p95_ns": 249794.5,
+            "p99_ns": 256942.0
+          },
+          "GPP_C": {
+            "mean_ns": 76410.14,
+            "median_ns": 76080.0,
+            "std_ns": 3503.602000855691,
+            "min_ns": 72160.0,
+            "max_ns": 126000.0,
+            "p95_ns": 78021.0,
+            "p99_ns": 89246.79999999999
+          },
+          "End_to_end": {
+            "mean_ns": 1654869.78,
+            "median_ns": 1652335.0,
+            "std_ns": 62495.0565257093,
+            "min_ns": 1597010.0,
+            "max_ns": 3460450.0,
+            "p95_ns": 1688260.5,
+            "p99_ns": 1712850.2
+          }
+        },
+        "golden_vector_pass": true,
+        "golden_vectors": [
+          {
+            "name": "ascending",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "descending",
+            "output": [
+              54,
+              -54
+            ],
+            "pass": true
+          },
+          {
+            "name": "uniform",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "impulse",
+            "output": [
+              14,
+              -14
+            ],
+            "pass": true
+          },
+          {
+            "name": "vertical_edge",
+            "output": [
+              63,
+              -63
+            ],
+            "pass": true
+          },
+          {
+            "name": "alternating",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_1",
+            "output": [
+              80,
+              -80
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_2",
+            "output": [
+              -118,
+              118
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_3",
+            "output": [
+              86,
+              -86
+            ],
+            "pass": true
+          }
+        ]
+      },
+      "communication": {
+        "boundaries": [],
+        "dma_transfer_count": 0,
+        "internal_hw_sw_boundary_count": 0,
+        "measured_transfer_latency_ns": {},
+        "measurement_status": "measured_on_pynq",
+        "total_communication_bytes": 0
+      },
+      "vivado": null,
+      "hls": [],
+      "pipeline_status": {
+        "bitstream_generation": "not_applicable",
+        "hls_compilation": "not_applicable",
+        "hls_synthesis": "not_applicable",
+        "ip_packaging": "not_applicable",
+        "place_and_route": "not_applicable",
+        "pynq_script_generation": "passed",
+        "rtl_cosimulation": "not_run",
+        "vivado_synthesis": "not_applicable",
+        "fpga_execution": "not_applicable",
+        "golden_vector_verification": "passed"
+      },
+      "artifacts": {
+        "result": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GGG/lightcnn_ggg_results.json",
+          "bytes": 2343,
+          "sha256": "43cdec0e630afc4cb936b195130a7a1efc9f9622e242870aa87be30219b45041"
+        },
+        "pre_board_record": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/GGG.json",
+          "bytes": 3763,
+          "sha256": "3f36d2a3b63dda4008dbf9c8a479a7a6bb2078d357265e22afedd4cfb88eebac"
+        },
+        "runner": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GGG/measure_lightcnn_ggg.py",
+          "bytes": 11667,
+          "sha256": "5810251691630b2ba3c0f5c933084788d79650651c7e9ab7d2fde746f33db88a"
+        },
+        "bitstream": null,
+        "hardware_handoff": null,
+        "vivado_summary": null
+      },
+      "evidence_records": {
+        "pynq_board": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GGG/lightcnn_ggg_results.json",
+        "vivado_implementation": null,
+        "pre_board": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/GGG.json"
+      }
+    },
+    {
+      "record_id": "lightcnn:FGG:partition-specific-v1",
+      "partition_id": "A_FPGA_BC_GPP",
+      "placement_id": "FGG",
+      "workload": "LightCNN",
+      "board": "AMD Xilinx ZCU104",
+      "platform": "Linux-6.6.10-xilinx-v2024.1-gfc1c20f0a1a9-aarch64-with-glibc2.35",
+      "topology": "partition_specific_fused",
+      "selection_eligible": true,
+      "selection_note": null,
+      "fpga_subfunctions": [
+        "A"
+      ],
+      "gpp_subfunctions": [
+        "B",
+        "C"
+      ],
+      "summary_metrics": {
+        "pynq_mean_latency_ms": 0.70962965,
+        "pynq_median_latency_ms": 0.706165,
+        "pynq_std_latency_ms": 0.06668239062884218,
+        "pynq_min_latency_ms": 0.68552,
+        "pynq_max_latency_ms": 2.79521,
+        "pynq_p95_latency_ms": 0.7236275,
+        "pynq_p99_latency_ms": 0.7367410999999999,
+        "iterations": 1000,
+        "warm_up_iterations": 100,
+        "golden_vector_verification_pass": true,
+        "golden_vector_count": 9,
+        "vivado_clb_luts": 3618,
+        "vivado_logic_luts": 3307,
+        "vivado_clb_registers_ff": 4926,
+        "vivado_bram18_equiv": 2,
+        "vivado_dsp": 0,
+        "vivado_uram": 0,
+        "vivado_wns_ns": 4.088,
+        "vivado_fmax_mhz": 169.147,
+        "vivado_timing_constraints_met": true,
+        "vivado_total_on_chip_power_w": 3.364,
+        "vivado_dynamic_power_w": 2.672,
+        "vivado_pl_power_w": 0.725,
+        "hls_synth_latency_cycles": 233,
+        "hls_synth_ii": 216,
+        "hls_synth_ii_violation": true,
+        "hls_impl_lut": 2995,
+        "hls_impl_ff": 2328,
+        "hls_impl_bram": 2,
+        "hls_impl_dsp": 0
+      },
+      "pynq_board": {
+        "schema_version": "lightcnn-partition-specific-results-v1",
+        "latency_ns": {
+          "mean_ns": 709629.65,
+          "median_ns": 706165.0,
+          "std_ns": 66682.39062884219,
+          "min_ns": 685520.0,
+          "max_ns": 2795210.0,
+          "p95_ns": 723627.5,
+          "p99_ns": 736741.1
+        },
+        "breakdown_ns": {
+          "Transfer_to_FPGA_A": {
+            "mean_ns": 121364.77,
+            "median_ns": 119030.0,
+            "std_ns": 60026.54934232935,
+            "min_ns": 117050.0,
+            "max_ns": 2016720.0,
+            "p95_ns": 120590.5,
+            "p99_ns": 131993.6
+          },
+          "Buffer_prepare_FPGA_A": {
+            "mean_ns": 111241.18,
+            "median_ns": 110615.0,
+            "std_ns": 3001.7748762357246,
+            "min_ns": 108660.0,
+            "max_ns": 148400.0,
+            "p95_ns": 112672.5,
+            "p99_ns": 123762.2
+          },
+          "FPGA_A_kernel": {
+            "mean_ns": 44506.05,
+            "median_ns": 44320.0,
+            "std_ns": 1962.6874681161032,
+            "min_ns": 41400.0,
+            "max_ns": 80750.0,
+            "p95_ns": 45420.5,
+            "p99_ns": 47718.09999999996
+          },
+          "Transfer_from_FPGA_A": {
+            "mean_ns": 81327.13,
+            "median_ns": 81090.0,
+            "std_ns": 2235.7558594578254,
+            "min_ns": 79170.0,
+            "max_ns": 131320.0,
+            "p95_ns": 81970.5,
+            "p99_ns": 91111.4
+          },
+          "GPP_B": {
+            "mean_ns": 242507.19,
+            "median_ns": 241165.0,
+            "std_ns": 5532.399515933389,
+            "min_ns": 233160.0,
+            "max_ns": 311810.0,
+            "p95_ns": 252770.5,
+            "p99_ns": 265220.3
+          },
+          "GPP_C": {
+            "mean_ns": 78542.49,
+            "median_ns": 78310.0,
+            "std_ns": 3160.2767758378372,
+            "min_ns": 74810.0,
+            "max_ns": 119970.0,
+            "p95_ns": 80073.5,
+            "p99_ns": 92390.4
+          },
+          "End_to_end": {
+            "mean_ns": 709629.65,
+            "median_ns": 706165.0,
+            "std_ns": 66682.39062884219,
+            "min_ns": 685520.0,
+            "max_ns": 2795210.0,
+            "p95_ns": 723627.5,
+            "p99_ns": 736741.1
+          }
+        },
+        "golden_vector_pass": true,
+        "golden_vectors": [
+          {
+            "name": "ascending",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "descending",
+            "output": [
+              54,
+              -54
+            ],
+            "pass": true
+          },
+          {
+            "name": "uniform",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "impulse",
+            "output": [
+              14,
+              -14
+            ],
+            "pass": true
+          },
+          {
+            "name": "vertical_edge",
+            "output": [
+              63,
+              -63
+            ],
+            "pass": true
+          },
+          {
+            "name": "alternating",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_1",
+            "output": [
+              80,
+              -80
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_2",
+            "output": [
+              -118,
+              118
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_3",
+            "output": [
+              86,
+              -86
+            ],
+            "pass": true
+          }
+        ]
+      },
+      "communication": {
+        "boundaries": [
+          {
+            "bytes": 64,
+            "edge": "HOST->A"
+          },
+          {
+            "bytes": 36,
+            "edge": "A->B"
+          }
+        ],
+        "dma_transfer_count": 2,
+        "internal_hw_sw_boundary_count": 1,
+        "measured_transfer_latency_ns": {
+          "Transfer_to_FPGA_A": {
+            "mean_ns": 121364.77,
+            "median_ns": 119030.0,
+            "std_ns": 60026.54934232935,
+            "min_ns": 117050.0,
+            "max_ns": 2016720.0,
+            "p95_ns": 120590.5,
+            "p99_ns": 131993.6
+          },
+          "Buffer_prepare_FPGA_A": {
+            "mean_ns": 111241.18,
+            "median_ns": 110615.0,
+            "std_ns": 3001.7748762357246,
+            "min_ns": 108660.0,
+            "max_ns": 148400.0,
+            "p95_ns": 112672.5,
+            "p99_ns": 123762.2
+          },
+          "Transfer_from_FPGA_A": {
+            "mean_ns": 81327.13,
+            "median_ns": 81090.0,
+            "std_ns": 2235.7558594578254,
+            "min_ns": 79170.0,
+            "max_ns": 131320.0,
+            "p95_ns": 81970.5,
+            "p99_ns": 91111.4
+          }
+        },
+        "measurement_status": "measured_on_pynq",
+        "total_communication_bytes": 100
+      },
+      "vivado": {
+        "definitions": {
+          "bram18_equiv": "Block RAM use converted to RAMB18 equivalents: 2 * RAMB36 + RAMB18.",
+          "design": "Vivado top-level design name used for implementation.",
+          "design_state": "Implementation state of the reports, normally Routed for final bitstream reports.",
+          "device": "Target FPGA/SoC part used by Vivado.",
+          "dsp": "DSP block count used by the implemented design.",
+          "dynamic_power_w": "Estimated switching/activity-dependent power in watts.",
+          "ff": "Flip-flop count reported at the implemented top level.",
+          "fmax_mhz": "Estimated maximum clock frequency from the worst setup slack: 1000 / (target_period_ns - worst_slack_ns).",
+          "logic_lut": "LUTs used as combinational/sequential logic, excluding LUTRAM and SRL usage.",
+          "lut": "Total LUT count reported at the implemented top level, including logic and LUTRAM/SRL use.",
+          "pl_power_w": "Estimated Programmable Logic plus non-PS on-chip power in watts, computed as total_power_w - ps_power_w.",
+          "pl_static_power_w": "Estimated static/leakage power attributed to the Programmable Logic.",
+          "power_confidence": "Vivado's confidence level for the power estimate; Medium usually means vectorless or incomplete activity data.",
+          "ps_power_w": "Estimated Processing System power in watts, from the PS8 row.",
+          "ps_static_power_w": "Estimated static/leakage power attributed to the Processing System.",
+          "ramb18": "Number of 18 Kb block RAM primitives used.",
+          "ramb36": "Number of 36 Kb block RAM primitives used.",
+          "static_power_w": "Estimated device static/leakage power in watts.",
+          "target_period_ns": "Requested clock period constraint in nanoseconds.",
+          "timing_met": "True when the worst reported setup slack is non-negative.",
+          "total_power_w": "Total estimated on-chip power in watts from Vivado power analysis.",
+          "uram": "UltraRAM block count used.",
+          "worst_slack_ns": "Worst setup slack in nanoseconds; positive means timing margin remains."
+        },
+        "generated_at": "2026-08-10T11:37:07.937815+00:00",
+        "key_values": {
+          "bram18_equiv": 2,
+          "design": "design_1_wrapper",
+          "design_state": "Routed",
+          "device": "xczu7ev-ffvc1156-2-e",
+          "dsp": 0,
+          "dynamic_power_w": 2.672,
+          "ff": 4926,
+          "fmax_mhz": 169.147,
+          "logic_lut": 3307,
+          "lut": 3618,
+          "pl_power_w": 0.725,
+          "pl_static_power_w": 0.593,
+          "power_confidence": "Medium",
+          "ps_power_w": 2.639,
+          "ps_static_power_w": 0.098,
+          "ramb18": 2,
+          "ramb36": 0,
+          "static_power_w": 0.692,
+          "target_period_ns": 10.0,
+          "timing_met": true,
+          "total_power_w": 3.364,
+          "uram": 0,
+          "worst_slack_ns": 4.088
+        },
+        "schema_version": 1,
+        "sources": {}
+      },
+      "hls": [
+        {
+          "estimated_clock_ns": 8.75,
+          "latency_cycles": {
+            "average": 233,
+            "best": 233,
+            "interval_max": 216,
+            "interval_min": 216,
+            "worst": 233
+          },
+          "loops": [
+            {
+              "latency_cycles": 231,
+              "name": "VITIS_LOOP_46_1_VITIS_LOOP_47_2",
+              "pipeline_depth": 22,
+              "pipeline_ii": 6,
+              "trip_count": 36
+            }
+          ],
+          "part": "xczu7ev-ffvc1156-2-e",
+          "project": "lightcnn_a_hls",
+          "report": "Backend/examples/lightcnn/build/hls/lightcnn_a_hls/solution1/syn/report/csynth.xml",
+          "report_sha256": "4ba5adbe2713c2b8ac99915910bc1b3924d47b87deac5f8c71e50209ad351a78",
+          "resources": {
+            "bram18": 2,
+            "dsp": 0,
+            "ff": 2328,
+            "lut": 2995,
+            "uram": 0
+          },
+          "status": "passed",
+          "target_clock_ns": 10,
+          "top_function": "lightcnn_sub_a",
+          "violations": [
+            {
+              "issue_type": "II Violation",
+              "loop": "VITIS_LOOP_46_1_VITIS_LOOP_47_2",
+              "source_location": "../../../../../../../../../lightcnn_subfunction_a/lightcnn_sub_a.cpp:47",
+              "violation_type": "Resource Limitation"
+            }
+          ]
+        }
+      ],
+      "pipeline_status": {
+        "bitstream_generation": "passed",
+        "hls_compilation": "passed",
+        "hls_synthesis": "passed",
+        "ip_packaging": "passed",
+        "place_and_route": "passed",
+        "pynq_script_generation": "passed",
+        "rtl_cosimulation": "not_run",
+        "vivado_synthesis": "passed",
+        "fpga_execution": "passed",
+        "golden_vector_verification": "passed"
+      },
+      "artifacts": {
+        "result": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FGG/lightcnn_fgg_results.json",
+          "bytes": 3054,
+          "sha256": "c7d932f5c570a106915b49bf7c6041894a08cb1f7daff854c448d495a662b9d1"
+        },
+        "pre_board_record": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/FGG.json",
+          "bytes": 9451,
+          "sha256": "232b6ac34f6aa23f8e0737c0fef7bf9d9cce13c7e49823e8586c6dbad055ea84"
+        },
+        "runner": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FGG/measure_lightcnn_fgg.py",
+          "bytes": 11773,
+          "sha256": "439a8a60e4f9b0a3ee7c94c43b315336f54333a18191721bc19756614e6cafbe"
+        },
+        "bitstream": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FGG/lightcnn_partition_fgg.bit",
+          "bytes": 19311213,
+          "sha256": "ca7394fd00bbcf9a27ca85b2ab0abeb004876be9e0d01bdf5f76dbfb35e00da9"
+        },
+        "hardware_handoff": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FGG/lightcnn_partition_fgg.hwh",
+          "bytes": 309987,
+          "sha256": "77bf6a82789c19f6249c04538fa8902db1a3ba7bb5b3a6c2be56c321771adfd8"
+        },
+        "vivado_summary": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FGG/vivado_report_summary.json",
+          "bytes": 3288,
+          "sha256": "43c22dffb6af0da4e2121b30cd7a453e626a6fac33b013a941806fec66038f9f"
+        }
+      },
+      "evidence_records": {
+        "pynq_board": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FGG/lightcnn_fgg_results.json",
+        "vivado_implementation": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FGG/vivado_report_summary.json",
+        "pre_board": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/FGG.json"
+      }
+    },
+    {
+      "record_id": "lightcnn:GFG:partition-specific-v1",
+      "partition_id": "B_FPGA_AC_GPP",
+      "placement_id": "GFG",
+      "workload": "LightCNN",
+      "board": "AMD Xilinx ZCU104",
+      "platform": "Linux-6.6.10-xilinx-v2024.1-gfc1c20f0a1a9-aarch64-with-glibc2.35",
+      "topology": "partition_specific_fused",
+      "selection_eligible": true,
+      "selection_note": null,
+      "fpga_subfunctions": [
+        "B"
+      ],
+      "gpp_subfunctions": [
+        "A",
+        "C"
+      ],
+      "summary_metrics": {
+        "pynq_mean_latency_ms": 1.79003151,
+        "pynq_median_latency_ms": 1.784745,
+        "pynq_std_latency_ms": 0.07009650686318042,
+        "pynq_min_latency_ms": 1.73677,
+        "pynq_max_latency_ms": 3.73855,
+        "pynq_p95_latency_ms": 1.8279,
+        "pynq_p99_latency_ms": 1.8395559,
+        "iterations": 1000,
+        "warm_up_iterations": 100,
+        "golden_vector_verification_pass": true,
+        "golden_vector_count": 9,
+        "vivado_clb_luts": 3492,
+        "vivado_logic_luts": 3178,
+        "vivado_clb_registers_ff": 4652,
+        "vivado_bram18_equiv": 2,
+        "vivado_dsp": 0,
+        "vivado_uram": 0,
+        "vivado_wns_ns": 3.806,
+        "vivado_fmax_mhz": 161.447,
+        "vivado_timing_constraints_met": true,
+        "vivado_total_on_chip_power_w": 3.358,
+        "vivado_dynamic_power_w": 2.666,
+        "vivado_pl_power_w": 0.719,
+        "hls_synth_latency_cycles": 53,
+        "hls_synth_ii": 36,
+        "hls_synth_ii_violation": true,
+        "hls_impl_lut": 2529,
+        "hls_impl_ff": 2055,
+        "hls_impl_bram": 2,
+        "hls_impl_dsp": 0
+      },
+      "pynq_board": {
+        "schema_version": "lightcnn-partition-specific-results-v1",
+        "latency_ns": {
+          "mean_ns": 1790031.51,
+          "median_ns": 1784745.0,
+          "std_ns": 70096.50686318042,
+          "min_ns": 1736770.0,
+          "max_ns": 3738550.0,
+          "p95_ns": 1827900.0,
+          "p99_ns": 1839555.9
+        },
+        "breakdown_ns": {
+          "GPP_A": {
+            "mean_ns": 1324194.18,
+            "median_ns": 1319820.0,
+            "std_ns": 59138.05448717094,
+            "min_ns": 1283280.0,
+            "max_ns": 3088870.0,
+            "p95_ns": 1365086.0,
+            "p99_ns": 1373220.6
+          },
+          "Transfer_to_FPGA_B": {
+            "mean_ns": 121862.1,
+            "median_ns": 121010.0,
+            "std_ns": 25845.023176426057,
+            "min_ns": 114160.0,
+            "max_ns": 923110.0,
+            "p95_ns": 122980.0,
+            "p99_ns": 132793.8
+          },
+          "Buffer_prepare_FPGA_B": {
+            "mean_ns": 113039.96,
+            "median_ns": 112500.0,
+            "std_ns": 2364.1840449508154,
+            "min_ns": 110750.0,
+            "max_ns": 133710.0,
+            "p95_ns": 114480.5,
+            "p99_ns": 125001.3
+          },
+          "FPGA_B_kernel": {
+            "mean_ns": 35449.75,
+            "median_ns": 35420.0,
+            "std_ns": 2025.576766627224,
+            "min_ns": 32280.0,
+            "max_ns": 68230.0,
+            "p95_ns": 35980.5,
+            "p99_ns": 45954.399999999994
+          },
+          "Transfer_from_FPGA_B": {
+            "mean_ns": 80921.18,
+            "median_ns": 81100.0,
+            "std_ns": 2445.145600490899,
+            "min_ns": 75860.0,
+            "max_ns": 119300.0,
+            "p95_ns": 82050.0,
+            "p99_ns": 91392.3
+          },
+          "GPP_C": {
+            "mean_ns": 81895.16,
+            "median_ns": 81840.0,
+            "std_ns": 1953.950760485023,
+            "min_ns": 78690.0,
+            "max_ns": 101330.0,
+            "p95_ns": 83340.5,
+            "p99_ns": 94110.2
+          },
+          "End_to_end": {
+            "mean_ns": 1790031.51,
+            "median_ns": 1784745.0,
+            "std_ns": 70096.50686318042,
+            "min_ns": 1736770.0,
+            "max_ns": 3738550.0,
+            "p95_ns": 1827900.0,
+            "p99_ns": 1839555.9
+          }
+        },
+        "golden_vector_pass": true,
+        "golden_vectors": [
+          {
+            "name": "ascending",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "descending",
+            "output": [
+              54,
+              -54
+            ],
+            "pass": true
+          },
+          {
+            "name": "uniform",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "impulse",
+            "output": [
+              14,
+              -14
+            ],
+            "pass": true
+          },
+          {
+            "name": "vertical_edge",
+            "output": [
+              63,
+              -63
+            ],
+            "pass": true
+          },
+          {
+            "name": "alternating",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_1",
+            "output": [
+              80,
+              -80
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_2",
+            "output": [
+              -118,
+              118
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_3",
+            "output": [
+              86,
+              -86
+            ],
+            "pass": true
+          }
+        ]
+      },
+      "communication": {
+        "boundaries": [
+          {
+            "bytes": 36,
+            "edge": "A->B"
+          },
+          {
+            "bytes": 9,
+            "edge": "B->C"
+          }
+        ],
+        "dma_transfer_count": 2,
+        "internal_hw_sw_boundary_count": 2,
+        "measured_transfer_latency_ns": {
+          "Transfer_to_FPGA_B": {
+            "mean_ns": 121862.1,
+            "median_ns": 121010.0,
+            "std_ns": 25845.023176426057,
+            "min_ns": 114160.0,
+            "max_ns": 923110.0,
+            "p95_ns": 122980.0,
+            "p99_ns": 132793.8
+          },
+          "Buffer_prepare_FPGA_B": {
+            "mean_ns": 113039.96,
+            "median_ns": 112500.0,
+            "std_ns": 2364.1840449508154,
+            "min_ns": 110750.0,
+            "max_ns": 133710.0,
+            "p95_ns": 114480.5,
+            "p99_ns": 125001.3
+          },
+          "Transfer_from_FPGA_B": {
+            "mean_ns": 80921.18,
+            "median_ns": 81100.0,
+            "std_ns": 2445.145600490899,
+            "min_ns": 75860.0,
+            "max_ns": 119300.0,
+            "p95_ns": 82050.0,
+            "p99_ns": 91392.3
+          }
+        },
+        "measurement_status": "measured_on_pynq",
+        "total_communication_bytes": 45
+      },
+      "vivado": {
+        "definitions": {
+          "bram18_equiv": "Block RAM use converted to RAMB18 equivalents: 2 * RAMB36 + RAMB18.",
+          "design": "Vivado top-level design name used for implementation.",
+          "design_state": "Implementation state of the reports, normally Routed for final bitstream reports.",
+          "device": "Target FPGA/SoC part used by Vivado.",
+          "dsp": "DSP block count used by the implemented design.",
+          "dynamic_power_w": "Estimated switching/activity-dependent power in watts.",
+          "ff": "Flip-flop count reported at the implemented top level.",
+          "fmax_mhz": "Estimated maximum clock frequency from the worst setup slack: 1000 / (target_period_ns - worst_slack_ns).",
+          "logic_lut": "LUTs used as combinational/sequential logic, excluding LUTRAM and SRL usage.",
+          "lut": "Total LUT count reported at the implemented top level, including logic and LUTRAM/SRL use.",
+          "pl_power_w": "Estimated Programmable Logic plus non-PS on-chip power in watts, computed as total_power_w - ps_power_w.",
+          "pl_static_power_w": "Estimated static/leakage power attributed to the Programmable Logic.",
+          "power_confidence": "Vivado's confidence level for the power estimate; Medium usually means vectorless or incomplete activity data.",
+          "ps_power_w": "Estimated Processing System power in watts, from the PS8 row.",
+          "ps_static_power_w": "Estimated static/leakage power attributed to the Processing System.",
+          "ramb18": "Number of 18 Kb block RAM primitives used.",
+          "ramb36": "Number of 36 Kb block RAM primitives used.",
+          "static_power_w": "Estimated device static/leakage power in watts.",
+          "target_period_ns": "Requested clock period constraint in nanoseconds.",
+          "timing_met": "True when the worst reported setup slack is non-negative.",
+          "total_power_w": "Total estimated on-chip power in watts from Vivado power analysis.",
+          "uram": "UltraRAM block count used.",
+          "worst_slack_ns": "Worst setup slack in nanoseconds; positive means timing margin remains."
+        },
+        "generated_at": "2026-08-10T11:37:08.043897+00:00",
+        "key_values": {
+          "bram18_equiv": 2,
+          "design": "design_1_wrapper",
+          "design_state": "Routed",
+          "device": "xczu7ev-ffvc1156-2-e",
+          "dsp": 0,
+          "dynamic_power_w": 2.666,
+          "ff": 4652,
+          "fmax_mhz": 161.447,
+          "logic_lut": 3178,
+          "lut": 3492,
+          "pl_power_w": 0.719,
+          "pl_static_power_w": 0.593,
+          "power_confidence": "Medium",
+          "ps_power_w": 2.639,
+          "ps_static_power_w": 0.098,
+          "ramb18": 2,
+          "ramb36": 0,
+          "static_power_w": 0.691,
+          "target_period_ns": 10.0,
+          "timing_met": true,
+          "total_power_w": 3.358,
+          "uram": 0,
+          "worst_slack_ns": 3.806
+        },
+        "schema_version": 1,
+        "sources": {}
+      },
+      "hls": [
+        {
+          "estimated_clock_ns": 8.75,
+          "latency_cycles": {
+            "average": 53,
+            "best": 53,
+            "interval_max": 36,
+            "interval_min": 36,
+            "worst": 53
+          },
+          "loops": [
+            {
+              "latency_cycles": 51,
+              "name": "VITIS_LOOP_37_1_VITIS_LOOP_38_2",
+              "pipeline_depth": 20,
+              "pipeline_ii": 4,
+              "trip_count": 9
+            }
+          ],
+          "part": "xczu7ev-ffvc1156-2-e",
+          "project": "lightcnn_b_hls",
+          "report": "Backend/examples/lightcnn/build/hls/lightcnn_b_hls/solution1/syn/report/csynth.xml",
+          "report_sha256": "27e79d22692967a6b511ce5f75650db04ac9e2c8da01d125bf4db645a47b7d04",
+          "resources": {
+            "bram18": 2,
+            "dsp": 0,
+            "ff": 2055,
+            "lut": 2529,
+            "uram": 0
+          },
+          "status": "passed",
+          "target_clock_ns": 10,
+          "top_function": "lightcnn_sub_b",
+          "violations": [
+            {
+              "issue_type": "II Violation",
+              "loop": "VITIS_LOOP_37_1_VITIS_LOOP_38_2",
+              "source_location": "../../../../../../../../../lightcnn_subfunction_b/lightcnn_sub_b.cpp:38",
+              "violation_type": "Resource Limitation"
+            }
+          ]
+        }
+      ],
+      "pipeline_status": {
+        "bitstream_generation": "passed",
+        "hls_compilation": "passed",
+        "hls_synthesis": "passed",
+        "ip_packaging": "passed",
+        "place_and_route": "passed",
+        "pynq_script_generation": "passed",
+        "rtl_cosimulation": "not_run",
+        "vivado_synthesis": "passed",
+        "fpga_execution": "passed",
+        "golden_vector_verification": "passed"
+      },
+      "artifacts": {
+        "result": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GFG/lightcnn_gfg_results.json",
+          "bytes": 3062,
+          "sha256": "69c7899c5682a0934a4552ab4a2160347ad1bb03abe3cc9a49825c0c5702a694"
+        },
+        "pre_board_record": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/GFG.json",
+          "bytes": 9437,
+          "sha256": "4ee3d4378161ce3507d182b01a3f2173cec6d56577d7eee3508b81ce04048700"
+        },
+        "runner": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GFG/measure_lightcnn_gfg.py",
+          "bytes": 11772,
+          "sha256": "a5039378b8022a200e99eadaa97e6fa9a239d960f36ea3424a3f5daf3e13ba4c"
+        },
+        "bitstream": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GFG/lightcnn_partition_gfg.bit",
+          "bytes": 19311213,
+          "sha256": "4fb9b4f6cf4cfd58daeeb5ddf3352bbb7fcdb74ffcb912ad821c03b571b8f74d"
+        },
+        "hardware_handoff": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GFG/lightcnn_partition_gfg.hwh",
+          "bytes": 309985,
+          "sha256": "518e838eff07c0f308ac654e9550c8d8adb30a46a82c7efb6e2e36307f6dc585"
+        },
+        "vivado_summary": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GFG/vivado_report_summary.json",
+          "bytes": 3288,
+          "sha256": "a88061c9bbc80acc65dd7b823d026d227e44ecbac1940b8fcc9c27a3aa2928eb"
+        }
+      },
+      "evidence_records": {
+        "pynq_board": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GFG/lightcnn_gfg_results.json",
+        "vivado_implementation": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GFG/vivado_report_summary.json",
+        "pre_board": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/GFG.json"
+      }
+    },
+    {
+      "record_id": "lightcnn:GGF:partition-specific-v1",
+      "partition_id": "C_FPGA_AB_GPP",
+      "placement_id": "GGF",
+      "workload": "LightCNN",
+      "board": "AMD Xilinx ZCU104",
+      "platform": "Linux-6.6.10-xilinx-v2024.1-gfc1c20f0a1a9-aarch64-with-glibc2.35",
+      "topology": "partition_specific_fused",
+      "selection_eligible": true,
+      "selection_note": null,
+      "fpga_subfunctions": [
+        "C"
+      ],
+      "gpp_subfunctions": [
+        "A",
+        "B"
+      ],
+      "summary_metrics": {
+        "pynq_mean_latency_ms": 1.95511176,
+        "pynq_median_latency_ms": 1.953575,
+        "pynq_std_latency_ms": 0.024008542115305544,
+        "pynq_min_latency_ms": 1.88354,
+        "pynq_max_latency_ms": 2.31585,
+        "pynq_p95_latency_ms": 1.995126,
+        "pynq_p99_latency_ms": 2.0064273999999997,
+        "iterations": 1000,
+        "warm_up_iterations": 100,
+        "golden_vector_verification_pass": true,
+        "golden_vector_count": 9,
+        "vivado_clb_luts": 3458,
+        "vivado_logic_luts": 3177,
+        "vivado_clb_registers_ff": 4612,
+        "vivado_bram18_equiv": 2,
+        "vivado_dsp": 0,
+        "vivado_uram": 0,
+        "vivado_wns_ns": 3.835,
+        "vivado_fmax_mhz": 162.206,
+        "vivado_timing_constraints_met": true,
+        "vivado_total_on_chip_power_w": 3.361,
+        "vivado_dynamic_power_w": 2.67,
+        "vivado_pl_power_w": 0.722,
+        "hls_synth_latency_cycles": 28,
+        "hls_synth_ii": 29,
+        "hls_synth_ii_violation": true,
+        "hls_impl_lut": 2256,
+        "hls_impl_ff": 1824,
+        "hls_impl_bram": 2,
+        "hls_impl_dsp": 0
+      },
+      "pynq_board": {
+        "schema_version": "lightcnn-partition-specific-results-v1",
+        "latency_ns": {
+          "mean_ns": 1955111.76,
+          "median_ns": 1953575.0,
+          "std_ns": 24008.542115305543,
+          "min_ns": 1883540.0,
+          "max_ns": 2315850.0,
+          "p95_ns": 1995126.0,
+          "p99_ns": 2006427.4
+        },
+        "breakdown_ns": {
+          "GPP_A": {
+            "mean_ns": 1329409.47,
+            "median_ns": 1327425.0,
+            "std_ns": 19078.977352549584,
+            "min_ns": 1276750.0,
+            "max_ns": 1400540.0,
+            "p95_ns": 1368972.5,
+            "p99_ns": 1377930.7
+          },
+          "GPP_B": {
+            "mean_ns": 239664.47,
+            "median_ns": 239115.0,
+            "std_ns": 2913.48329651982,
+            "min_ns": 231190.0,
+            "max_ns": 267930.0,
+            "p95_ns": 244370.5,
+            "p99_ns": 247144.3
+          },
+          "Transfer_to_FPGA_C": {
+            "mean_ns": 121707.63,
+            "median_ns": 121320.0,
+            "std_ns": 6322.536775938913,
+            "min_ns": 118930.0,
+            "max_ns": 314720.0,
+            "p95_ns": 122811.0,
+            "p99_ns": 126798.59999999999
+          },
+          "Buffer_prepare_FPGA_C": {
+            "mean_ns": 112436.44,
+            "median_ns": 112290.0,
+            "std_ns": 980.1897399993534,
+            "min_ns": 110480.0,
+            "max_ns": 125100.0,
+            "p95_ns": 113772.0,
+            "p99_ns": 114520.8
+          },
+          "FPGA_C_kernel": {
+            "mean_ns": 35785.94,
+            "median_ns": 35820.0,
+            "std_ns": 1566.4539943451898,
+            "min_ns": 32930.0,
+            "max_ns": 76900.0,
+            "p95_ns": 36450.0,
+            "p99_ns": 38011.5
+          },
+          "Transfer_from_FPGA_C": {
+            "mean_ns": 82098.05,
+            "median_ns": 82060.0,
+            "std_ns": 900.6514850373591,
+            "min_ns": 80650.0,
+            "max_ns": 97620.0,
+            "p95_ns": 82840.0,
+            "p99_ns": 84980.8
+          },
+          "End_to_end": {
+            "mean_ns": 1955111.76,
+            "median_ns": 1953575.0,
+            "std_ns": 24008.542115305543,
+            "min_ns": 1883540.0,
+            "max_ns": 2315850.0,
+            "p95_ns": 1995126.0,
+            "p99_ns": 2006427.4
+          }
+        },
+        "golden_vector_pass": true,
+        "golden_vectors": [
+          {
+            "name": "ascending",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "descending",
+            "output": [
+              54,
+              -54
+            ],
+            "pass": true
+          },
+          {
+            "name": "uniform",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "impulse",
+            "output": [
+              14,
+              -14
+            ],
+            "pass": true
+          },
+          {
+            "name": "vertical_edge",
+            "output": [
+              63,
+              -63
+            ],
+            "pass": true
+          },
+          {
+            "name": "alternating",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_1",
+            "output": [
+              80,
+              -80
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_2",
+            "output": [
+              -118,
+              118
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_3",
+            "output": [
+              86,
+              -86
+            ],
+            "pass": true
+          }
+        ]
+      },
+      "communication": {
+        "boundaries": [
+          {
+            "bytes": 9,
+            "edge": "B->C"
+          },
+          {
+            "bytes": 2,
+            "edge": "C->HOST"
+          }
+        ],
+        "dma_transfer_count": 2,
+        "internal_hw_sw_boundary_count": 1,
+        "measured_transfer_latency_ns": {
+          "Transfer_to_FPGA_C": {
+            "mean_ns": 121707.63,
+            "median_ns": 121320.0,
+            "std_ns": 6322.536775938913,
+            "min_ns": 118930.0,
+            "max_ns": 314720.0,
+            "p95_ns": 122811.0,
+            "p99_ns": 126798.59999999999
+          },
+          "Buffer_prepare_FPGA_C": {
+            "mean_ns": 112436.44,
+            "median_ns": 112290.0,
+            "std_ns": 980.1897399993534,
+            "min_ns": 110480.0,
+            "max_ns": 125100.0,
+            "p95_ns": 113772.0,
+            "p99_ns": 114520.8
+          },
+          "Transfer_from_FPGA_C": {
+            "mean_ns": 82098.05,
+            "median_ns": 82060.0,
+            "std_ns": 900.6514850373591,
+            "min_ns": 80650.0,
+            "max_ns": 97620.0,
+            "p95_ns": 82840.0,
+            "p99_ns": 84980.8
+          }
+        },
+        "measurement_status": "measured_on_pynq",
+        "total_communication_bytes": 11
+      },
+      "vivado": {
+        "definitions": {
+          "bram18_equiv": "Block RAM use converted to RAMB18 equivalents: 2 * RAMB36 + RAMB18.",
+          "design": "Vivado top-level design name used for implementation.",
+          "design_state": "Implementation state of the reports, normally Routed for final bitstream reports.",
+          "device": "Target FPGA/SoC part used by Vivado.",
+          "dsp": "DSP block count used by the implemented design.",
+          "dynamic_power_w": "Estimated switching/activity-dependent power in watts.",
+          "ff": "Flip-flop count reported at the implemented top level.",
+          "fmax_mhz": "Estimated maximum clock frequency from the worst setup slack: 1000 / (target_period_ns - worst_slack_ns).",
+          "logic_lut": "LUTs used as combinational/sequential logic, excluding LUTRAM and SRL usage.",
+          "lut": "Total LUT count reported at the implemented top level, including logic and LUTRAM/SRL use.",
+          "pl_power_w": "Estimated Programmable Logic plus non-PS on-chip power in watts, computed as total_power_w - ps_power_w.",
+          "pl_static_power_w": "Estimated static/leakage power attributed to the Programmable Logic.",
+          "power_confidence": "Vivado's confidence level for the power estimate; Medium usually means vectorless or incomplete activity data.",
+          "ps_power_w": "Estimated Processing System power in watts, from the PS8 row.",
+          "ps_static_power_w": "Estimated static/leakage power attributed to the Processing System.",
+          "ramb18": "Number of 18 Kb block RAM primitives used.",
+          "ramb36": "Number of 36 Kb block RAM primitives used.",
+          "static_power_w": "Estimated device static/leakage power in watts.",
+          "target_period_ns": "Requested clock period constraint in nanoseconds.",
+          "timing_met": "True when the worst reported setup slack is non-negative.",
+          "total_power_w": "Total estimated on-chip power in watts from Vivado power analysis.",
+          "uram": "UltraRAM block count used.",
+          "worst_slack_ns": "Worst setup slack in nanoseconds; positive means timing margin remains."
+        },
+        "generated_at": "2026-08-10T11:37:08.152567+00:00",
+        "key_values": {
+          "bram18_equiv": 2,
+          "design": "design_1_wrapper",
+          "design_state": "Routed",
+          "device": "xczu7ev-ffvc1156-2-e",
+          "dsp": 0,
+          "dynamic_power_w": 2.67,
+          "ff": 4612,
+          "fmax_mhz": 162.206,
+          "logic_lut": 3177,
+          "lut": 3458,
+          "pl_power_w": 0.722,
+          "pl_static_power_w": 0.593,
+          "power_confidence": "Medium",
+          "ps_power_w": 2.639,
+          "ps_static_power_w": 0.098,
+          "ramb18": 2,
+          "ramb36": 0,
+          "static_power_w": 0.692,
+          "target_period_ns": 10.0,
+          "timing_met": true,
+          "total_power_w": 3.361,
+          "uram": 0,
+          "worst_slack_ns": 3.835
+        },
+        "schema_version": 1,
+        "sources": {}
+      },
+      "hls": [
+        {
+          "estimated_clock_ns": 8.75,
+          "latency_cycles": {
+            "average": 28,
+            "best": 28,
+            "interval_max": 29,
+            "interval_min": 29,
+            "worst": 28
+          },
+          "loops": [
+            {
+              "latency_cycles": 2,
+              "name": "VITIS_LOOP_43_1",
+              "pipeline_depth": 2,
+              "pipeline_ii": 1,
+              "trip_count": 2
+            }
+          ],
+          "part": "xczu7ev-ffvc1156-2-e",
+          "project": "lightcnn_c_hls",
+          "report": "Backend/examples/lightcnn/build/hls/lightcnn_c_hls/solution1/syn/report/csynth.xml",
+          "report_sha256": "e38c6d08bd36939b858d89ecd17c518c906f9d85bbe60ca3a80b400cb2af8216",
+          "resources": {
+            "bram18": 2,
+            "dsp": 0,
+            "ff": 1824,
+            "lut": 2256,
+            "uram": 0
+          },
+          "status": "passed",
+          "target_clock_ns": 10,
+          "top_function": "lightcnn_sub_c",
+          "violations": [
+            {
+              "issue_type": "-",
+              "loop": "VITIS_LOOP_43_1",
+              "source_location": "../../../../../../../../../lightcnn_subfunction_c/lightcnn_sub_c.cpp:43",
+              "violation_type": "-"
+            }
+          ]
+        }
+      ],
+      "pipeline_status": {
+        "bitstream_generation": "passed",
+        "hls_compilation": "passed",
+        "hls_synthesis": "passed",
+        "ip_packaging": "passed",
+        "place_and_route": "passed",
+        "pynq_script_generation": "passed",
+        "rtl_cosimulation": "not_run",
+        "vivado_synthesis": "passed",
+        "fpga_execution": "passed",
+        "golden_vector_verification": "passed"
+      },
+      "artifacts": {
+        "result": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GGF/lightcnn_ggf_results.json",
+          "bytes": 3066,
+          "sha256": "e0f2ee1545e1c2bbdf27345f0152307ff114cba9a7c4e2900043cff1f3e31088"
+        },
+        "pre_board_record": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/GGF.json",
+          "bytes": 9375,
+          "sha256": "a716c55ad2d498bac163cb726c3241ae9f0576a8b860bfd66b9f10f0eb6da6b8"
+        },
+        "runner": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GGF/measure_lightcnn_ggf.py",
+          "bytes": 11771,
+          "sha256": "f751355c4e7ebf810dd7491479def30094a4f71148b40cf7657015c5ac81ed77"
+        },
+        "bitstream": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GGF/lightcnn_partition_ggf.bit",
+          "bytes": 19311213,
+          "sha256": "90569aad4e3c91dae20920c051b3dea6d1c361e0d973913de47103930fc84a79"
+        },
+        "hardware_handoff": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GGF/lightcnn_partition_ggf.hwh",
+          "bytes": 309985,
+          "sha256": "8842f48c063f859acac51c86fa6e34da410af5e123c06dd5861706ab1a16f2bf"
+        },
+        "vivado_summary": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GGF/vivado_report_summary.json",
+          "bytes": 3287,
+          "sha256": "32d73aeb9fa877dcb46c0d810ac77717823e858d9922b93193f24418013c9394"
+        }
+      },
+      "evidence_records": {
+        "pynq_board": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GGF/lightcnn_ggf_results.json",
+        "vivado_implementation": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GGF/vivado_report_summary.json",
+        "pre_board": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/GGF.json"
+      }
+    },
+    {
+      "record_id": "lightcnn:FFG:partition-specific-v1",
+      "partition_id": "AB_FPGA_C_GPP",
+      "placement_id": "FFG",
+      "workload": "LightCNN",
+      "board": "AMD Xilinx ZCU104",
+      "platform": "Linux-6.6.10-xilinx-v2024.1-gfc1c20f0a1a9-aarch64-with-glibc2.35",
+      "topology": "partition_specific_fused",
+      "selection_eligible": true,
+      "selection_note": null,
+      "fpga_subfunctions": [
+        "A",
+        "B"
+      ],
+      "gpp_subfunctions": [
+        "C"
+      ],
+      "summary_metrics": {
+        "pynq_mean_latency_ms": 0.46990335,
+        "pynq_median_latency_ms": 0.46661,
+        "pynq_std_latency_ms": 0.012028621304102146,
+        "pynq_min_latency_ms": 0.45177,
+        "pynq_max_latency_ms": 0.60631,
+        "pynq_p95_latency_ms": 0.4899435,
+        "pynq_p99_latency_ms": 0.514635,
+        "iterations": 1000,
+        "warm_up_iterations": 100,
+        "golden_vector_verification_pass": true,
+        "golden_vector_count": 9,
+        "vivado_clb_luts": 3906,
+        "vivado_logic_luts": 3622,
+        "vivado_clb_registers_ff": 5347,
+        "vivado_bram18_equiv": 2,
+        "vivado_dsp": 0,
+        "vivado_uram": 0,
+        "vivado_wns_ns": 4.644,
+        "vivado_fmax_mhz": 186.706,
+        "vivado_timing_constraints_met": true,
+        "vivado_total_on_chip_power_w": 3.365,
+        "vivado_dynamic_power_w": 2.674,
+        "vivado_pl_power_w": 0.726,
+        "hls_synth_latency_cycles": 246,
+        "hls_synth_ii": 247,
+        "hls_synth_ii_violation": true,
+        "hls_impl_lut": 3535,
+        "hls_impl_ff": 2627,
+        "hls_impl_bram": 2,
+        "hls_impl_dsp": 0
+      },
+      "pynq_board": {
+        "schema_version": "lightcnn-partition-specific-results-v1",
+        "latency_ns": {
+          "mean_ns": 469903.35,
+          "median_ns": 466610.0,
+          "std_ns": 12028.621304102146,
+          "min_ns": 451770.0,
+          "max_ns": 606310.0,
+          "p95_ns": 489943.5,
+          "p99_ns": 514635.0
+        },
+        "breakdown_ns": {
+          "Transfer_to_FPGA_AB": {
+            "mean_ns": 120612.08,
+            "median_ns": 119680.0,
+            "std_ns": 4083.9045132813767,
+            "min_ns": 114690.0,
+            "max_ns": 171290.0,
+            "p95_ns": 126027.5,
+            "p99_ns": 138608.8
+          },
+          "Buffer_prepare_FPGA_AB": {
+            "mean_ns": 112712.83,
+            "median_ns": 111830.0,
+            "std_ns": 3813.0122070483853,
+            "min_ns": 109950.0,
+            "max_ns": 154200.0,
+            "p95_ns": 116546.5,
+            "p99_ns": 127721.6
+          },
+          "FPGA_AB_kernel": {
+            "mean_ns": 45028.86,
+            "median_ns": 44650.0,
+            "std_ns": 2984.1700186819116,
+            "min_ns": 38220.0,
+            "max_ns": 83170.0,
+            "p95_ns": 49232.0,
+            "p99_ns": 56663.2
+          },
+          "Transfer_from_FPGA_AB": {
+            "mean_ns": 82022.04,
+            "median_ns": 81620.0,
+            "std_ns": 2405.6954167973963,
+            "min_ns": 76560.0,
+            "max_ns": 110790.0,
+            "p95_ns": 85112.5,
+            "p99_ns": 93401.9
+          },
+          "GPP_C": {
+            "mean_ns": 83318.05,
+            "median_ns": 82850.0,
+            "std_ns": 3899.7877759565326,
+            "min_ns": 78440.0,
+            "max_ns": 123350.0,
+            "p95_ns": 88527.0,
+            "p99_ns": 96343.49999999999
+          },
+          "End_to_end": {
+            "mean_ns": 469903.35,
+            "median_ns": 466610.0,
+            "std_ns": 12028.621304102146,
+            "min_ns": 451770.0,
+            "max_ns": 606310.0,
+            "p95_ns": 489943.5,
+            "p99_ns": 514635.0
+          }
+        },
+        "golden_vector_pass": true,
+        "golden_vectors": [
+          {
+            "name": "ascending",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "descending",
+            "output": [
+              54,
+              -54
+            ],
+            "pass": true
+          },
+          {
+            "name": "uniform",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "impulse",
+            "output": [
+              14,
+              -14
+            ],
+            "pass": true
+          },
+          {
+            "name": "vertical_edge",
+            "output": [
+              63,
+              -63
+            ],
+            "pass": true
+          },
+          {
+            "name": "alternating",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_1",
+            "output": [
+              80,
+              -80
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_2",
+            "output": [
+              -118,
+              118
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_3",
+            "output": [
+              86,
+              -86
+            ],
+            "pass": true
+          }
+        ]
+      },
+      "communication": {
+        "boundaries": [
+          {
+            "bytes": 64,
+            "edge": "HOST->A"
+          },
+          {
+            "bytes": 9,
+            "edge": "B->C"
+          }
+        ],
+        "dma_transfer_count": 2,
+        "internal_hw_sw_boundary_count": 1,
+        "measured_transfer_latency_ns": {
+          "Transfer_to_FPGA_AB": {
+            "mean_ns": 120612.08,
+            "median_ns": 119680.0,
+            "std_ns": 4083.9045132813767,
+            "min_ns": 114690.0,
+            "max_ns": 171290.0,
+            "p95_ns": 126027.5,
+            "p99_ns": 138608.8
+          },
+          "Buffer_prepare_FPGA_AB": {
+            "mean_ns": 112712.83,
+            "median_ns": 111830.0,
+            "std_ns": 3813.0122070483853,
+            "min_ns": 109950.0,
+            "max_ns": 154200.0,
+            "p95_ns": 116546.5,
+            "p99_ns": 127721.6
+          },
+          "Transfer_from_FPGA_AB": {
+            "mean_ns": 82022.04,
+            "median_ns": 81620.0,
+            "std_ns": 2405.6954167973963,
+            "min_ns": 76560.0,
+            "max_ns": 110790.0,
+            "p95_ns": 85112.5,
+            "p99_ns": 93401.9
+          }
+        },
+        "measurement_status": "measured_on_pynq",
+        "total_communication_bytes": 73
+      },
+      "vivado": {
+        "definitions": {
+          "bram18_equiv": "Block RAM use converted to RAMB18 equivalents: 2 * RAMB36 + RAMB18.",
+          "design": "Vivado top-level design name used for implementation.",
+          "design_state": "Implementation state of the reports, normally Routed for final bitstream reports.",
+          "device": "Target FPGA/SoC part used by Vivado.",
+          "dsp": "DSP block count used by the implemented design.",
+          "dynamic_power_w": "Estimated switching/activity-dependent power in watts.",
+          "ff": "Flip-flop count reported at the implemented top level.",
+          "fmax_mhz": "Estimated maximum clock frequency from the worst setup slack: 1000 / (target_period_ns - worst_slack_ns).",
+          "logic_lut": "LUTs used as combinational/sequential logic, excluding LUTRAM and SRL usage.",
+          "lut": "Total LUT count reported at the implemented top level, including logic and LUTRAM/SRL use.",
+          "pl_power_w": "Estimated Programmable Logic plus non-PS on-chip power in watts, computed as total_power_w - ps_power_w.",
+          "pl_static_power_w": "Estimated static/leakage power attributed to the Programmable Logic.",
+          "power_confidence": "Vivado's confidence level for the power estimate; Medium usually means vectorless or incomplete activity data.",
+          "ps_power_w": "Estimated Processing System power in watts, from the PS8 row.",
+          "ps_static_power_w": "Estimated static/leakage power attributed to the Processing System.",
+          "ramb18": "Number of 18 Kb block RAM primitives used.",
+          "ramb36": "Number of 36 Kb block RAM primitives used.",
+          "static_power_w": "Estimated device static/leakage power in watts.",
+          "target_period_ns": "Requested clock period constraint in nanoseconds.",
+          "timing_met": "True when the worst reported setup slack is non-negative.",
+          "total_power_w": "Total estimated on-chip power in watts from Vivado power analysis.",
+          "uram": "UltraRAM block count used.",
+          "worst_slack_ns": "Worst setup slack in nanoseconds; positive means timing margin remains."
+        },
+        "generated_at": "2026-08-10T11:37:08.258014+00:00",
+        "key_values": {
+          "bram18_equiv": 2,
+          "design": "design_1_wrapper",
+          "design_state": "Routed",
+          "device": "xczu7ev-ffvc1156-2-e",
+          "dsp": 0,
+          "dynamic_power_w": 2.674,
+          "ff": 5347,
+          "fmax_mhz": 186.706,
+          "logic_lut": 3622,
+          "lut": 3906,
+          "pl_power_w": 0.726,
+          "pl_static_power_w": 0.593,
+          "power_confidence": "Medium",
+          "ps_power_w": 2.639,
+          "ps_static_power_w": 0.098,
+          "ramb18": 2,
+          "ramb36": 0,
+          "static_power_w": 0.692,
+          "target_period_ns": 10.0,
+          "timing_met": true,
+          "total_power_w": 3.365,
+          "uram": 0,
+          "worst_slack_ns": 4.644
+        },
+        "schema_version": 1,
+        "sources": {}
+      },
+      "hls": [
+        {
+          "estimated_clock_ns": 8.75,
+          "latency_cycles": {
+            "average": 246,
+            "best": 246,
+            "interval_max": 247,
+            "interval_min": 247,
+            "worst": 246
+          },
+          "loops": [
+            {
+              "latency_cycles": 225,
+              "name": "VITIS_LOOP_34_1_VITIS_LOOP_35_2",
+              "pipeline_depth": 16,
+              "pipeline_ii": 6,
+              "trip_count": 36
+            }
+          ],
+          "part": "xczu7ev-ffvc1156-2-e",
+          "project": "lightcnn_ab_hls",
+          "report": "Backend/examples/lightcnn/build/hls/lightcnn_ab_hls/solution1/syn/report/csynth.xml",
+          "report_sha256": "b183520ff44acc0aab3692fe6cfb13a5a3252b04c1eb0ee5fb51f1a522089ce4",
+          "resources": {
+            "bram18": 2,
+            "dsp": 0,
+            "ff": 2627,
+            "lut": 3535,
+            "uram": 0
+          },
+          "status": "passed",
+          "target_clock_ns": 10,
+          "top_function": "lightcnn_ab",
+          "violations": [
+            {
+              "issue_type": "II Violation",
+              "loop": "VITIS_LOOP_34_1_VITIS_LOOP_35_2",
+              "source_location": "../../../../../../../../../lightcnn_subfunctions_ab/lightcnn_subs_ab.cpp:34~../../../../../../../../../lightcnn_subfunctions_ab/lightcnn_subs_ab.cpp:105",
+              "violation_type": "Resource Limitation"
+            }
+          ]
+        }
+      ],
+      "pipeline_status": {
+        "bitstream_generation": "passed",
+        "hls_compilation": "passed",
+        "hls_synthesis": "passed",
+        "ip_packaging": "passed",
+        "place_and_route": "passed",
+        "pynq_script_generation": "passed",
+        "rtl_cosimulation": "not_run",
+        "vivado_synthesis": "passed",
+        "fpga_execution": "passed",
+        "golden_vector_verification": "passed"
+      },
+      "artifacts": {
+        "result": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FFG/lightcnn_ffg_results.json",
+          "bytes": 2842,
+          "sha256": "4ea3b7125400d2e03e23b1ba6c86cd549174cd4ddee9c5da6c6ebbebb725d90d"
+        },
+        "pre_board_record": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/FFG.json",
+          "bytes": 9557,
+          "sha256": "048085c981d707c21abef9f956ddbb107b207e07911abb8931dbd94e3304b4b5"
+        },
+        "runner": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FFG/measure_lightcnn_ffg.py",
+          "bytes": 11774,
+          "sha256": "6c0c26621c9a52ae11cb3234627ba88e173148b764f5042a4cb56b5e52a398b5"
+        },
+        "bitstream": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FFG/lightcnn_partition_ffg.bit",
+          "bytes": 19311213,
+          "sha256": "b92ce12a83098a00b21cc806145cdf6bdf6a5badcda0b53ec20d42aceefe2463"
+        },
+        "hardware_handoff": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FFG/lightcnn_partition_ffg.hwh",
+          "bytes": 309987,
+          "sha256": "196b2565760ffab7119bf08c8be83fec64d2a4fb7fa6e808dd5dc79e082720f0"
+        },
+        "vivado_summary": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FFG/vivado_report_summary.json",
+          "bytes": 3288,
+          "sha256": "55464341318db00aadd84d8d8d30f9242d254cdf14f93c20be917efb5f59d66b"
+        }
+      },
+      "evidence_records": {
+        "pynq_board": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FFG/lightcnn_ffg_results.json",
+        "vivado_implementation": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FFG/vivado_report_summary.json",
+        "pre_board": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/FFG.json"
+      }
+    },
+    {
+      "record_id": "lightcnn:GFF:partition-specific-v1",
+      "partition_id": "A_GPP_BC_FPGA",
+      "placement_id": "GFF",
+      "workload": "LightCNN",
+      "board": "AMD Xilinx ZCU104",
+      "platform": "Linux-6.6.10-xilinx-v2024.1-gfc1c20f0a1a9-aarch64-with-glibc2.35",
+      "topology": "partition_specific_fused",
+      "selection_eligible": true,
+      "selection_note": null,
+      "fpga_subfunctions": [
+        "B",
+        "C"
+      ],
+      "gpp_subfunctions": [
+        "A"
+      ],
+      "summary_metrics": {
+        "pynq_mean_latency_ms": 1.73780457,
+        "pynq_median_latency_ms": 1.729395,
+        "pynq_std_latency_ms": 0.09084495174975382,
+        "pynq_min_latency_ms": 1.67252,
+        "pynq_max_latency_ms": 3.68854,
+        "pynq_p95_latency_ms": 1.771994,
+        "pynq_p99_latency_ms": 1.7953648,
+        "iterations": 1000,
+        "warm_up_iterations": 100,
+        "golden_vector_verification_pass": true,
+        "golden_vector_count": 9,
+        "vivado_clb_luts": 3585,
+        "vivado_logic_luts": 3303,
+        "vivado_clb_registers_ff": 4798,
+        "vivado_bram18_equiv": 2,
+        "vivado_dsp": 0,
+        "vivado_uram": 0,
+        "vivado_wns_ns": 4.301,
+        "vivado_fmax_mhz": 175.469,
+        "vivado_timing_constraints_met": true,
+        "vivado_total_on_chip_power_w": 3.36,
+        "vivado_dynamic_power_w": 2.668,
+        "vivado_pl_power_w": 0.721,
+        "hls_synth_latency_cycles": 59,
+        "hls_synth_ii": 60,
+        "hls_synth_ii_violation": true,
+        "hls_impl_lut": 2882,
+        "hls_impl_ff": 2140,
+        "hls_impl_bram": 2,
+        "hls_impl_dsp": 0
+      },
+      "pynq_board": {
+        "schema_version": "lightcnn-partition-specific-results-v1",
+        "latency_ns": {
+          "mean_ns": 1737804.57,
+          "median_ns": 1729395.0,
+          "std_ns": 90844.95174975382,
+          "min_ns": 1672520.0,
+          "max_ns": 3688540.0,
+          "p95_ns": 1771994.0,
+          "p99_ns": 1795364.8
+        },
+        "breakdown_ns": {
+          "GPP_A": {
+            "mean_ns": 1355927.96,
+            "median_ns": 1351030.0,
+            "std_ns": 62602.66213539485,
+            "min_ns": 1302650.0,
+            "max_ns": 3109720.0,
+            "p95_ns": 1390601.5,
+            "p99_ns": 1405953.7
+          },
+          "Transfer_to_FPGA_BC": {
+            "mean_ns": 122537.11,
+            "median_ns": 121430.0,
+            "std_ns": 26773.48928227137,
+            "min_ns": 113360.0,
+            "max_ns": 943380.0,
+            "p95_ns": 124622.99999999999,
+            "p99_ns": 138561.0
+          },
+          "Buffer_prepare_FPGA_BC": {
+            "mean_ns": 113637.48,
+            "median_ns": 113060.0,
+            "std_ns": 3323.806680539649,
+            "min_ns": 109580.0,
+            "max_ns": 146750.0,
+            "p95_ns": 117883.0,
+            "p99_ns": 129570.7
+          },
+          "FPGA_BC_kernel": {
+            "mean_ns": 34828.83,
+            "median_ns": 34760.0,
+            "std_ns": 2224.0998923384714,
+            "min_ns": 31680.0,
+            "max_ns": 71040.0,
+            "p95_ns": 35400.0,
+            "p99_ns": 45159.79999999999
+          },
+          "Transfer_from_FPGA_BC": {
+            "mean_ns": 83227.56,
+            "median_ns": 81350.0,
+            "std_ns": 51681.72004535453,
+            "min_ns": 75390.0,
+            "max_ns": 1620220.0,
+            "p95_ns": 82540.5,
+            "p99_ns": 92192.9
+          },
+          "End_to_end": {
+            "mean_ns": 1737804.57,
+            "median_ns": 1729395.0,
+            "std_ns": 90844.95174975382,
+            "min_ns": 1672520.0,
+            "max_ns": 3688540.0,
+            "p95_ns": 1771994.0,
+            "p99_ns": 1795364.8
+          }
+        },
+        "golden_vector_pass": true,
+        "golden_vectors": [
+          {
+            "name": "ascending",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "descending",
+            "output": [
+              54,
+              -54
+            ],
+            "pass": true
+          },
+          {
+            "name": "uniform",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "impulse",
+            "output": [
+              14,
+              -14
+            ],
+            "pass": true
+          },
+          {
+            "name": "vertical_edge",
+            "output": [
+              63,
+              -63
+            ],
+            "pass": true
+          },
+          {
+            "name": "alternating",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_1",
+            "output": [
+              80,
+              -80
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_2",
+            "output": [
+              -118,
+              118
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_3",
+            "output": [
+              86,
+              -86
+            ],
+            "pass": true
+          }
+        ]
+      },
+      "communication": {
+        "boundaries": [
+          {
+            "bytes": 36,
+            "edge": "A->B"
+          },
+          {
+            "bytes": 2,
+            "edge": "C->HOST"
+          }
+        ],
+        "dma_transfer_count": 2,
+        "internal_hw_sw_boundary_count": 1,
+        "measured_transfer_latency_ns": {
+          "Transfer_to_FPGA_BC": {
+            "mean_ns": 122537.11,
+            "median_ns": 121430.0,
+            "std_ns": 26773.48928227137,
+            "min_ns": 113360.0,
+            "max_ns": 943380.0,
+            "p95_ns": 124622.99999999999,
+            "p99_ns": 138561.0
+          },
+          "Buffer_prepare_FPGA_BC": {
+            "mean_ns": 113637.48,
+            "median_ns": 113060.0,
+            "std_ns": 3323.806680539649,
+            "min_ns": 109580.0,
+            "max_ns": 146750.0,
+            "p95_ns": 117883.0,
+            "p99_ns": 129570.7
+          },
+          "Transfer_from_FPGA_BC": {
+            "mean_ns": 83227.56,
+            "median_ns": 81350.0,
+            "std_ns": 51681.72004535453,
+            "min_ns": 75390.0,
+            "max_ns": 1620220.0,
+            "p95_ns": 82540.5,
+            "p99_ns": 92192.9
+          }
+        },
+        "measurement_status": "measured_on_pynq",
+        "total_communication_bytes": 38
+      },
+      "vivado": {
+        "definitions": {
+          "bram18_equiv": "Block RAM use converted to RAMB18 equivalents: 2 * RAMB36 + RAMB18.",
+          "design": "Vivado top-level design name used for implementation.",
+          "design_state": "Implementation state of the reports, normally Routed for final bitstream reports.",
+          "device": "Target FPGA/SoC part used by Vivado.",
+          "dsp": "DSP block count used by the implemented design.",
+          "dynamic_power_w": "Estimated switching/activity-dependent power in watts.",
+          "ff": "Flip-flop count reported at the implemented top level.",
+          "fmax_mhz": "Estimated maximum clock frequency from the worst setup slack: 1000 / (target_period_ns - worst_slack_ns).",
+          "logic_lut": "LUTs used as combinational/sequential logic, excluding LUTRAM and SRL usage.",
+          "lut": "Total LUT count reported at the implemented top level, including logic and LUTRAM/SRL use.",
+          "pl_power_w": "Estimated Programmable Logic plus non-PS on-chip power in watts, computed as total_power_w - ps_power_w.",
+          "pl_static_power_w": "Estimated static/leakage power attributed to the Programmable Logic.",
+          "power_confidence": "Vivado's confidence level for the power estimate; Medium usually means vectorless or incomplete activity data.",
+          "ps_power_w": "Estimated Processing System power in watts, from the PS8 row.",
+          "ps_static_power_w": "Estimated static/leakage power attributed to the Processing System.",
+          "ramb18": "Number of 18 Kb block RAM primitives used.",
+          "ramb36": "Number of 36 Kb block RAM primitives used.",
+          "static_power_w": "Estimated device static/leakage power in watts.",
+          "target_period_ns": "Requested clock period constraint in nanoseconds.",
+          "timing_met": "True when the worst reported setup slack is non-negative.",
+          "total_power_w": "Total estimated on-chip power in watts from Vivado power analysis.",
+          "uram": "UltraRAM block count used.",
+          "worst_slack_ns": "Worst setup slack in nanoseconds; positive means timing margin remains."
+        },
+        "generated_at": "2026-08-10T11:37:08.362995+00:00",
+        "key_values": {
+          "bram18_equiv": 2,
+          "design": "design_1_wrapper",
+          "design_state": "Routed",
+          "device": "xczu7ev-ffvc1156-2-e",
+          "dsp": 0,
+          "dynamic_power_w": 2.668,
+          "ff": 4798,
+          "fmax_mhz": 175.469,
+          "logic_lut": 3303,
+          "lut": 3585,
+          "pl_power_w": 0.721,
+          "pl_static_power_w": 0.593,
+          "power_confidence": "Medium",
+          "ps_power_w": 2.639,
+          "ps_static_power_w": 0.098,
+          "ramb18": 2,
+          "ramb36": 0,
+          "static_power_w": 0.691,
+          "target_period_ns": 10.0,
+          "timing_met": true,
+          "total_power_w": 3.36,
+          "uram": 0,
+          "worst_slack_ns": 4.301
+        },
+        "schema_version": 1,
+        "sources": {}
+      },
+      "hls": [
+        {
+          "estimated_clock_ns": 8.75,
+          "latency_cycles": {
+            "average": 59,
+            "best": 59,
+            "interval_max": 60,
+            "interval_min": 60,
+            "worst": 59
+          },
+          "loops": [
+            {
+              "latency_cycles": 45,
+              "name": "VITIS_LOOP_31_1_VITIS_LOOP_32_2",
+              "pipeline_depth": 14,
+              "pipeline_ii": 4,
+              "trip_count": 9
+            }
+          ],
+          "part": "xczu7ev-ffvc1156-2-e",
+          "project": "lightcnn_bc_hls",
+          "report": "Backend/examples/lightcnn/build/hls/lightcnn_bc_hls/solution1/syn/report/csynth.xml",
+          "report_sha256": "8962cb0d66684c96b8dff3cb26e792e2febf3b8239df12bb7a2039c92b8fe89b",
+          "resources": {
+            "bram18": 2,
+            "dsp": 0,
+            "ff": 2140,
+            "lut": 2882,
+            "uram": 0
+          },
+          "status": "passed",
+          "target_clock_ns": 10,
+          "top_function": "lightcnn_bc",
+          "violations": [
+            {
+              "issue_type": "II Violation",
+              "loop": "VITIS_LOOP_31_1_VITIS_LOOP_32_2",
+              "source_location": "../../../../../../../../../lightcnn_subfunctions_bc/lightcnn_subs_bc.cpp:31~../../../../../../../../../lightcnn_subfunctions_bc/lightcnn_subs_bc.cpp:96",
+              "violation_type": "Resource Limitation"
+            }
+          ]
+        }
+      ],
+      "pipeline_status": {
+        "bitstream_generation": "passed",
+        "hls_compilation": "passed",
+        "hls_synthesis": "passed",
+        "ip_packaging": "passed",
+        "place_and_route": "passed",
+        "pynq_script_generation": "passed",
+        "rtl_cosimulation": "not_run",
+        "vivado_synthesis": "passed",
+        "fpga_execution": "passed",
+        "golden_vector_verification": "passed"
+      },
+      "artifacts": {
+        "result": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GFF/lightcnn_gff_results.json",
+          "bytes": 2865,
+          "sha256": "e1f330f646a96e79f49d72869abff89cd1a91452378ae467f5f01fb5ed3da7ad"
+        },
+        "pre_board_record": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/GFF.json",
+          "bytes": 9547,
+          "sha256": "156b303c716b3857ba8c5c42da161dbdde599d9d563d68a1a565d25be15722d1"
+        },
+        "runner": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GFF/measure_lightcnn_gff.py",
+          "bytes": 11774,
+          "sha256": "865f0a00d476c89b8e54a487a1107b501d008cb4a139324d241cb9f71916c851"
+        },
+        "bitstream": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GFF/lightcnn_partition_gff.bit",
+          "bytes": 19311213,
+          "sha256": "f0d62f175d1d709a20ab85e3295f46eb6729ff240b5fcf18c357d5611082ee38"
+        },
+        "hardware_handoff": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GFF/lightcnn_partition_gff.hwh",
+          "bytes": 309985,
+          "sha256": "51f84696dcf7a94fbc42a90ca1004f5a4ce168d10ac09777e9f4eb89097f3999"
+        },
+        "vivado_summary": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GFF/vivado_report_summary.json",
+          "bytes": 3287,
+          "sha256": "814e28f4bb010a65851b761c9c1d1bf165f36c54e8fd4cd73bd25abb63d7eaa5"
+        }
+      },
+      "evidence_records": {
+        "pynq_board": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GFF/lightcnn_gff_results.json",
+        "vivado_implementation": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/GFF/vivado_report_summary.json",
+        "pre_board": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/GFF.json"
+      }
+    },
+    {
+      "record_id": "lightcnn:FGF:partition-specific-v1",
+      "partition_id": "AC_FPGA_B_GPP",
+      "placement_id": "FGF",
+      "workload": "LightCNN",
+      "board": "AMD Xilinx ZCU104",
+      "platform": "Linux-6.6.10-xilinx-v2024.1-gfc1c20f0a1a9-aarch64-with-glibc2.35",
+      "topology": "partition_specific_multi_island",
+      "selection_eligible": false,
+      "selection_note": "Measured negative-example evidence only; the selected-top generator supports one contiguous FPGA region and cannot emit this two-island A+C placement.",
+      "fpga_subfunctions": [
+        "A",
+        "C"
+      ],
+      "gpp_subfunctions": [
+        "B"
+      ],
+      "summary_metrics": {
+        "pynq_mean_latency_ms": 0.99264212,
+        "pynq_median_latency_ms": 0.988885,
+        "pynq_std_latency_ms": 0.059556658043459755,
+        "pynq_min_latency_ms": 0.96099,
+        "pynq_max_latency_ms": 2.06898,
+        "pynq_p95_latency_ms": 1.0075985,
+        "pynq_p99_latency_ms": 1.0292313,
+        "iterations": 1000,
+        "warm_up_iterations": 100,
+        "golden_vector_verification_pass": true,
+        "golden_vector_count": 9,
+        "vivado_clb_luts": 6220,
+        "vivado_logic_luts": 5706,
+        "vivado_clb_registers_ff": 8501,
+        "vivado_bram18_equiv": 4,
+        "vivado_dsp": 0,
+        "vivado_uram": 0,
+        "vivado_wns_ns": 4.09,
+        "vivado_fmax_mhz": 169.205,
+        "vivado_timing_constraints_met": true,
+        "vivado_total_on_chip_power_w": 3.378,
+        "vivado_dynamic_power_w": 2.687,
+        "vivado_pl_power_w": 0.739
+      },
+      "pynq_board": {
+        "schema_version": "lightcnn-partition-specific-results-v1",
+        "latency_ns": {
+          "mean_ns": 992642.12,
+          "median_ns": 988885.0,
+          "std_ns": 59556.658043459756,
+          "min_ns": 960990.0,
+          "max_ns": 2068980.0,
+          "p95_ns": 1007598.5,
+          "p99_ns": 1029231.3
+        },
+        "breakdown_ns": {
+          "Transfer_to_FPGA_A": {
+            "mean_ns": 118899.98,
+            "median_ns": 118650.0,
+            "std_ns": 24640.826796185233,
+            "min_ns": 111530.0,
+            "max_ns": 891570.0,
+            "p95_ns": 120010.0,
+            "p99_ns": 130091.8
+          },
+          "Buffer_prepare_FPGA_A": {
+            "mean_ns": 111780.33,
+            "median_ns": 111280.0,
+            "std_ns": 2514.0087492091193,
+            "min_ns": 109750.0,
+            "max_ns": 147990.0,
+            "p95_ns": 113182.5,
+            "p99_ns": 123890.8
+          },
+          "FPGA_A_kernel": {
+            "mean_ns": 45015.61,
+            "median_ns": 43555.0,
+            "std_ns": 31294.975549245923,
+            "min_ns": 42210.0,
+            "max_ns": 1031750.0,
+            "p95_ns": 45541.0,
+            "p99_ns": 45960.9
+          },
+          "Transfer_from_FPGA_A": {
+            "mean_ns": 80818.23,
+            "median_ns": 81070.0,
+            "std_ns": 4354.296426186439,
+            "min_ns": 75650.0,
+            "max_ns": 177820.0,
+            "p95_ns": 82030.0,
+            "p99_ns": 92592.8
+          },
+          "GPP_B": {
+            "mean_ns": 247002.04,
+            "median_ns": 244275.0,
+            "std_ns": 39974.481898311074,
+            "min_ns": 237750.0,
+            "max_ns": 1254860.0,
+            "p95_ns": 255930.0,
+            "p99_ns": 261771.8
+          },
+          "Transfer_to_FPGA_C": {
+            "mean_ns": 118940.75,
+            "median_ns": 119310.0,
+            "std_ns": 3127.5123241164056,
+            "min_ns": 112830.0,
+            "max_ns": 150010.0,
+            "p95_ns": 120720.0,
+            "p99_ns": 131432.7
+          },
+          "Buffer_prepare_FPGA_C": {
+            "mean_ns": 111964.77,
+            "median_ns": 111515.0,
+            "std_ns": 2375.1551416907487,
+            "min_ns": 110130.0,
+            "max_ns": 149360.0,
+            "p95_ns": 113311.0,
+            "p99_ns": 123725.09999999999
+          },
+          "FPGA_C_kernel": {
+            "mean_ns": 33318.12,
+            "median_ns": 32960.0,
+            "std_ns": 1086.0296798890904,
+            "min_ns": 31970.0,
+            "max_ns": 44970.0,
+            "p95_ns": 34490.0,
+            "p99_ns": 34940.9
+          },
+          "Transfer_from_FPGA_C": {
+            "mean_ns": 80145.37,
+            "median_ns": 80500.0,
+            "std_ns": 2786.4196136081155,
+            "min_ns": 75450.0,
+            "max_ns": 115850.0,
+            "p95_ns": 81570.0,
+            "p99_ns": 91990.5
+          },
+          "End_to_end": {
+            "mean_ns": 992642.12,
+            "median_ns": 988885.0,
+            "std_ns": 59556.658043459756,
+            "min_ns": 960990.0,
+            "max_ns": 2068980.0,
+            "p95_ns": 1007598.5,
+            "p99_ns": 1029231.3
+          }
+        },
+        "golden_vector_pass": true,
+        "golden_vectors": [
+          {
+            "name": "ascending",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "descending",
+            "output": [
+              54,
+              -54
+            ],
+            "pass": true
+          },
+          {
+            "name": "uniform",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "impulse",
+            "output": [
+              14,
+              -14
+            ],
+            "pass": true
+          },
+          {
+            "name": "vertical_edge",
+            "output": [
+              63,
+              -63
+            ],
+            "pass": true
+          },
+          {
+            "name": "alternating",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_1",
+            "output": [
+              80,
+              -80
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_2",
+            "output": [
+              -118,
+              118
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_3",
+            "output": [
+              86,
+              -86
+            ],
+            "pass": true
+          }
+        ]
+      },
+      "communication": {
+        "boundaries": [
+          {
+            "bytes": 64,
+            "edge": "HOST->A"
+          },
+          {
+            "bytes": 36,
+            "edge": "A->B"
+          },
+          {
+            "bytes": 9,
+            "edge": "B->C"
+          },
+          {
+            "bytes": 2,
+            "edge": "C->HOST"
+          }
+        ],
+        "dma_transfer_count": 4,
+        "internal_hw_sw_boundary_count": 2,
+        "measured_transfer_latency_ns": {
+          "Transfer_to_FPGA_A": {
+            "mean_ns": 118899.98,
+            "median_ns": 118650.0,
+            "std_ns": 24640.826796185233,
+            "min_ns": 111530.0,
+            "max_ns": 891570.0,
+            "p95_ns": 120010.0,
+            "p99_ns": 130091.8
+          },
+          "Buffer_prepare_FPGA_A": {
+            "mean_ns": 111780.33,
+            "median_ns": 111280.0,
+            "std_ns": 2514.0087492091193,
+            "min_ns": 109750.0,
+            "max_ns": 147990.0,
+            "p95_ns": 113182.5,
+            "p99_ns": 123890.8
+          },
+          "Transfer_from_FPGA_A": {
+            "mean_ns": 80818.23,
+            "median_ns": 81070.0,
+            "std_ns": 4354.296426186439,
+            "min_ns": 75650.0,
+            "max_ns": 177820.0,
+            "p95_ns": 82030.0,
+            "p99_ns": 92592.8
+          },
+          "Transfer_to_FPGA_C": {
+            "mean_ns": 118940.75,
+            "median_ns": 119310.0,
+            "std_ns": 3127.5123241164056,
+            "min_ns": 112830.0,
+            "max_ns": 150010.0,
+            "p95_ns": 120720.0,
+            "p99_ns": 131432.7
+          },
+          "Buffer_prepare_FPGA_C": {
+            "mean_ns": 111964.77,
+            "median_ns": 111515.0,
+            "std_ns": 2375.1551416907487,
+            "min_ns": 110130.0,
+            "max_ns": 149360.0,
+            "p95_ns": 113311.0,
+            "p99_ns": 123725.09999999999
+          },
+          "Transfer_from_FPGA_C": {
+            "mean_ns": 80145.37,
+            "median_ns": 80500.0,
+            "std_ns": 2786.4196136081155,
+            "min_ns": 75450.0,
+            "max_ns": 115850.0,
+            "p95_ns": 81570.0,
+            "p99_ns": 91990.5
+          }
+        },
+        "measurement_status": "measured_on_pynq",
+        "total_communication_bytes": 111
+      },
+      "vivado": {
+        "definitions": {
+          "bram18_equiv": "Block RAM use converted to RAMB18 equivalents: 2 * RAMB36 + RAMB18.",
+          "design": "Vivado top-level design name used for implementation.",
+          "design_state": "Implementation state of the reports, normally Routed for final bitstream reports.",
+          "device": "Target FPGA/SoC part used by Vivado.",
+          "dsp": "DSP block count used by the implemented design.",
+          "dynamic_power_w": "Estimated switching/activity-dependent power in watts.",
+          "ff": "Flip-flop count reported at the implemented top level.",
+          "fmax_mhz": "Estimated maximum clock frequency from the worst setup slack: 1000 / (target_period_ns - worst_slack_ns).",
+          "logic_lut": "LUTs used as combinational/sequential logic, excluding LUTRAM and SRL usage.",
+          "lut": "Total LUT count reported at the implemented top level, including logic and LUTRAM/SRL use.",
+          "pl_power_w": "Estimated Programmable Logic plus non-PS on-chip power in watts, computed as total_power_w - ps_power_w.",
+          "pl_static_power_w": "Estimated static/leakage power attributed to the Programmable Logic.",
+          "power_confidence": "Vivado's confidence level for the power estimate; Medium usually means vectorless or incomplete activity data.",
+          "ps_power_w": "Estimated Processing System power in watts, from the PS8 row.",
+          "ps_static_power_w": "Estimated static/leakage power attributed to the Processing System.",
+          "ramb18": "Number of 18 Kb block RAM primitives used.",
+          "ramb36": "Number of 36 Kb block RAM primitives used.",
+          "static_power_w": "Estimated device static/leakage power in watts.",
+          "target_period_ns": "Requested clock period constraint in nanoseconds.",
+          "timing_met": "True when the worst reported setup slack is non-negative.",
+          "total_power_w": "Total estimated on-chip power in watts from Vivado power analysis.",
+          "uram": "UltraRAM block count used.",
+          "worst_slack_ns": "Worst setup slack in nanoseconds; positive means timing margin remains."
+        },
+        "generated_at": "2026-08-10T11:37:08.468778+00:00",
+        "key_values": {
+          "bram18_equiv": 4,
+          "design": "design_1_wrapper",
+          "design_state": "Routed",
+          "device": "xczu7ev-ffvc1156-2-e",
+          "dsp": 0,
+          "dynamic_power_w": 2.687,
+          "ff": 8501,
+          "fmax_mhz": 169.205,
+          "logic_lut": 5706,
+          "lut": 6220,
+          "pl_power_w": 0.739,
+          "pl_static_power_w": 0.593,
+          "power_confidence": "Medium",
+          "ps_power_w": 2.639,
+          "ps_static_power_w": 0.098,
+          "ramb18": 4,
+          "ramb36": 0,
+          "static_power_w": 0.692,
+          "target_period_ns": 10.0,
+          "timing_met": true,
+          "total_power_w": 3.378,
+          "uram": 0,
+          "worst_slack_ns": 4.09
+        },
+        "schema_version": 1,
+        "sources": {}
+      },
+      "hls": [
+        {
+          "estimated_clock_ns": 8.75,
+          "latency_cycles": {
+            "average": 233,
+            "best": 233,
+            "interval_max": 216,
+            "interval_min": 216,
+            "worst": 233
+          },
+          "loops": [
+            {
+              "latency_cycles": 231,
+              "name": "VITIS_LOOP_46_1_VITIS_LOOP_47_2",
+              "pipeline_depth": 22,
+              "pipeline_ii": 6,
+              "trip_count": 36
+            }
+          ],
+          "part": "xczu7ev-ffvc1156-2-e",
+          "project": "lightcnn_a_hls",
+          "report": "Backend/examples/lightcnn/build/hls/lightcnn_a_hls/solution1/syn/report/csynth.xml",
+          "report_sha256": "4ba5adbe2713c2b8ac99915910bc1b3924d47b87deac5f8c71e50209ad351a78",
+          "resources": {
+            "bram18": 2,
+            "dsp": 0,
+            "ff": 2328,
+            "lut": 2995,
+            "uram": 0
+          },
+          "status": "passed",
+          "target_clock_ns": 10,
+          "top_function": "lightcnn_sub_a",
+          "violations": [
+            {
+              "issue_type": "II Violation",
+              "loop": "VITIS_LOOP_46_1_VITIS_LOOP_47_2",
+              "source_location": "../../../../../../../../../lightcnn_subfunction_a/lightcnn_sub_a.cpp:47",
+              "violation_type": "Resource Limitation"
+            }
+          ]
+        },
+        {
+          "estimated_clock_ns": 8.75,
+          "latency_cycles": {
+            "average": 53,
+            "best": 53,
+            "interval_max": 36,
+            "interval_min": 36,
+            "worst": 53
+          },
+          "loops": [
+            {
+              "latency_cycles": 51,
+              "name": "VITIS_LOOP_37_1_VITIS_LOOP_38_2",
+              "pipeline_depth": 20,
+              "pipeline_ii": 4,
+              "trip_count": 9
+            }
+          ],
+          "part": "xczu7ev-ffvc1156-2-e",
+          "project": "lightcnn_b_hls",
+          "report": "Backend/examples/lightcnn/build/hls/lightcnn_b_hls/solution1/syn/report/csynth.xml",
+          "report_sha256": "27e79d22692967a6b511ce5f75650db04ac9e2c8da01d125bf4db645a47b7d04",
+          "resources": {
+            "bram18": 2,
+            "dsp": 0,
+            "ff": 2055,
+            "lut": 2529,
+            "uram": 0
+          },
+          "status": "passed",
+          "target_clock_ns": 10,
+          "top_function": "lightcnn_sub_b",
+          "violations": [
+            {
+              "issue_type": "II Violation",
+              "loop": "VITIS_LOOP_37_1_VITIS_LOOP_38_2",
+              "source_location": "../../../../../../../../../lightcnn_subfunction_b/lightcnn_sub_b.cpp:38",
+              "violation_type": "Resource Limitation"
+            }
+          ]
+        },
+        {
+          "estimated_clock_ns": 8.75,
+          "latency_cycles": {
+            "average": 28,
+            "best": 28,
+            "interval_max": 29,
+            "interval_min": 29,
+            "worst": 28
+          },
+          "loops": [
+            {
+              "latency_cycles": 2,
+              "name": "VITIS_LOOP_43_1",
+              "pipeline_depth": 2,
+              "pipeline_ii": 1,
+              "trip_count": 2
+            }
+          ],
+          "part": "xczu7ev-ffvc1156-2-e",
+          "project": "lightcnn_c_hls",
+          "report": "Backend/examples/lightcnn/build/hls/lightcnn_c_hls/solution1/syn/report/csynth.xml",
+          "report_sha256": "e38c6d08bd36939b858d89ecd17c518c906f9d85bbe60ca3a80b400cb2af8216",
+          "resources": {
+            "bram18": 2,
+            "dsp": 0,
+            "ff": 1824,
+            "lut": 2256,
+            "uram": 0
+          },
+          "status": "passed",
+          "target_clock_ns": 10,
+          "top_function": "lightcnn_sub_c",
+          "violations": [
+            {
+              "issue_type": "-",
+              "loop": "VITIS_LOOP_43_1",
+              "source_location": "../../../../../../../../../lightcnn_subfunction_c/lightcnn_sub_c.cpp:43",
+              "violation_type": "-"
+            }
+          ]
+        }
+      ],
+      "pipeline_status": {
+        "bitstream_generation": "passed",
+        "hls_compilation": "passed",
+        "hls_synthesis": "passed",
+        "ip_packaging": "passed",
+        "place_and_route": "passed",
+        "pynq_script_generation": "passed",
+        "rtl_cosimulation": "not_run",
+        "vivado_synthesis": "passed",
+        "fpga_execution": "passed",
+        "golden_vector_verification": "passed"
+      },
+      "artifacts": {
+        "result": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FGF/lightcnn_fgf_results.json",
+          "bytes": 3768,
+          "sha256": "d7ad34357e9a0a1cfc3477d27d7f75d9012b92bca616403acb7f7a071adb98aa"
+        },
+        "pre_board_record": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/FGF.json",
+          "bytes": 12193,
+          "sha256": "6713eb8ed13b80f3cd03f7c98c650678a7a2a44f443527ebd4ba005b14d7afdd"
+        },
+        "runner": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FGF/measure_lightcnn_fgf.py",
+          "bytes": 11883,
+          "sha256": "188c952bfc4546a04327989f0de8582388ee0a99bb5aac81c61533bac5d0507e"
+        },
+        "bitstream": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FGF/lightcnn_partition_fgf.bit",
+          "bytes": 19311213,
+          "sha256": "79e18428d99e017801ec9e480cc043a472e582fbae30b8f7873148f6b972678e"
+        },
+        "hardware_handoff": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FGF/lightcnn_partition_fgf.hwh",
+          "bytes": 402723,
+          "sha256": "7d5d3be6b645f3a23d56a53ef71620a6163ae4e7a76e3010f24f1a5ba6f0aa93"
+        },
+        "vivado_summary": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FGF/vivado_report_summary.json",
+          "bytes": 3287,
+          "sha256": "c8267fe01af508980ba66bf2ad51de8d9732bb58ab6971aed241fbe0578c8a3d"
+        }
+      },
+      "evidence_records": {
+        "pynq_board": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FGF/lightcnn_fgf_results.json",
+        "vivado_implementation": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FGF/vivado_report_summary.json",
+        "pre_board": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/FGF.json"
+      }
+    },
+    {
+      "record_id": "lightcnn:FFF:partition-specific-v1",
+      "partition_id": "ABC_FPGA",
+      "placement_id": "FFF",
+      "workload": "LightCNN",
+      "board": "AMD Xilinx ZCU104",
+      "platform": "Linux-6.6.10-xilinx-v2024.1-gfc1c20f0a1a9-aarch64-with-glibc2.35",
+      "topology": "partition_specific_fused",
+      "selection_eligible": true,
+      "selection_note": null,
+      "fpga_subfunctions": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gpp_subfunctions": [],
+      "summary_metrics": {
+        "pynq_mean_latency_ms": 0.38021917,
+        "pynq_median_latency_ms": 0.37423,
+        "pynq_std_latency_ms": 0.14809434508856542,
+        "pynq_min_latency_ms": 0.36413,
+        "pynq_max_latency_ms": 4.98119,
+        "pynq_p95_latency_ms": 0.3866085,
+        "pynq_p99_latency_ms": 0.3993368,
+        "iterations": 1000,
+        "warm_up_iterations": 100,
+        "golden_vector_verification_pass": true,
+        "golden_vector_count": 9,
+        "vivado_clb_luts": 3989,
+        "vivado_logic_luts": 3706,
+        "vivado_clb_registers_ff": 5413,
+        "vivado_bram18_equiv": 2,
+        "vivado_dsp": 0,
+        "vivado_uram": 0,
+        "vivado_wns_ns": 4.496,
+        "vivado_fmax_mhz": 181.686,
+        "vivado_timing_constraints_met": true,
+        "vivado_total_on_chip_power_w": 3.368,
+        "vivado_dynamic_power_w": 2.677,
+        "vivado_pl_power_w": 0.729,
+        "hls_synth_latency_cycles": 253,
+        "hls_synth_ii": 254,
+        "hls_synth_ii_violation": true,
+        "hls_impl_lut": 3782,
+        "hls_impl_ff": 2699,
+        "hls_impl_bram": 2,
+        "hls_impl_dsp": 0
+      },
+      "pynq_board": {
+        "schema_version": "lightcnn-partition-specific-results-v1",
+        "latency_ns": {
+          "mean_ns": 380219.17,
+          "median_ns": 374230.0,
+          "std_ns": 148094.34508856543,
+          "min_ns": 364130.0,
+          "max_ns": 4981190.0,
+          "p95_ns": 386608.5,
+          "p99_ns": 399336.8
+        },
+        "breakdown_ns": {
+          "Transfer_to_FPGA_AC": {
+            "mean_ns": 121899.81,
+            "median_ns": 117055.0,
+            "std_ns": 144275.59322374628,
+            "min_ns": 111600.0,
+            "max_ns": 4605820.0,
+            "p95_ns": 119161.0,
+            "p99_ns": 128760.5
+          },
+          "Buffer_prepare_FPGA_AC": {
+            "mean_ns": 111860.03,
+            "median_ns": 111200.0,
+            "std_ns": 4332.12616380225,
+            "min_ns": 108890.0,
+            "max_ns": 208270.0,
+            "p95_ns": 113291.5,
+            "p99_ns": 123523.3
+          },
+          "FPGA_AC_kernel": {
+            "mean_ns": 45291.34,
+            "median_ns": 45280.0,
+            "std_ns": 1802.6722953437763,
+            "min_ns": 36730.0,
+            "max_ns": 81420.0,
+            "p95_ns": 46190.0,
+            "p99_ns": 49254.69999999999
+          },
+          "Transfer_from_FPGA_AC": {
+            "mean_ns": 79907.22,
+            "median_ns": 80640.0,
+            "std_ns": 3041.5887084877204,
+            "min_ns": 76300.0,
+            "max_ns": 110620.0,
+            "p95_ns": 82580.5,
+            "p99_ns": 91133.0
+          },
+          "End_to_end": {
+            "mean_ns": 380219.17,
+            "median_ns": 374230.0,
+            "std_ns": 148094.34508856543,
+            "min_ns": 364130.0,
+            "max_ns": 4981190.0,
+            "p95_ns": 386608.5,
+            "p99_ns": 399336.8
+          }
+        },
+        "golden_vector_pass": true,
+        "golden_vectors": [
+          {
+            "name": "ascending",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "descending",
+            "output": [
+              54,
+              -54
+            ],
+            "pass": true
+          },
+          {
+            "name": "uniform",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "impulse",
+            "output": [
+              14,
+              -14
+            ],
+            "pass": true
+          },
+          {
+            "name": "vertical_edge",
+            "output": [
+              63,
+              -63
+            ],
+            "pass": true
+          },
+          {
+            "name": "alternating",
+            "output": [
+              0,
+              0
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_1",
+            "output": [
+              80,
+              -80
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_2",
+            "output": [
+              -118,
+              118
+            ],
+            "pass": true
+          },
+          {
+            "name": "pseudo_random_3",
+            "output": [
+              86,
+              -86
+            ],
+            "pass": true
+          }
+        ]
+      },
+      "communication": {
+        "boundaries": [
+          {
+            "bytes": 64,
+            "edge": "HOST->A"
+          },
+          {
+            "bytes": 2,
+            "edge": "C->HOST"
+          }
+        ],
+        "dma_transfer_count": 2,
+        "internal_hw_sw_boundary_count": 0,
+        "measured_transfer_latency_ns": {
+          "Transfer_to_FPGA_AC": {
+            "mean_ns": 121899.81,
+            "median_ns": 117055.0,
+            "std_ns": 144275.59322374628,
+            "min_ns": 111600.0,
+            "max_ns": 4605820.0,
+            "p95_ns": 119161.0,
+            "p99_ns": 128760.5
+          },
+          "Buffer_prepare_FPGA_AC": {
+            "mean_ns": 111860.03,
+            "median_ns": 111200.0,
+            "std_ns": 4332.12616380225,
+            "min_ns": 108890.0,
+            "max_ns": 208270.0,
+            "p95_ns": 113291.5,
+            "p99_ns": 123523.3
+          },
+          "Transfer_from_FPGA_AC": {
+            "mean_ns": 79907.22,
+            "median_ns": 80640.0,
+            "std_ns": 3041.5887084877204,
+            "min_ns": 76300.0,
+            "max_ns": 110620.0,
+            "p95_ns": 82580.5,
+            "p99_ns": 91133.0
+          }
+        },
+        "measurement_status": "measured_on_pynq",
+        "total_communication_bytes": 66
+      },
+      "vivado": {
+        "definitions": {
+          "bram18_equiv": "Block RAM use converted to RAMB18 equivalents: 2 * RAMB36 + RAMB18.",
+          "design": "Vivado top-level design name used for implementation.",
+          "design_state": "Implementation state of the reports, normally Routed for final bitstream reports.",
+          "device": "Target FPGA/SoC part used by Vivado.",
+          "dsp": "DSP block count used by the implemented design.",
+          "dynamic_power_w": "Estimated switching/activity-dependent power in watts.",
+          "ff": "Flip-flop count reported at the implemented top level.",
+          "fmax_mhz": "Estimated maximum clock frequency from the worst setup slack: 1000 / (target_period_ns - worst_slack_ns).",
+          "logic_lut": "LUTs used as combinational/sequential logic, excluding LUTRAM and SRL usage.",
+          "lut": "Total LUT count reported at the implemented top level, including logic and LUTRAM/SRL use.",
+          "pl_power_w": "Estimated Programmable Logic plus non-PS on-chip power in watts, computed as total_power_w - ps_power_w.",
+          "pl_static_power_w": "Estimated static/leakage power attributed to the Programmable Logic.",
+          "power_confidence": "Vivado's confidence level for the power estimate; Medium usually means vectorless or incomplete activity data.",
+          "ps_power_w": "Estimated Processing System power in watts, from the PS8 row.",
+          "ps_static_power_w": "Estimated static/leakage power attributed to the Processing System.",
+          "ramb18": "Number of 18 Kb block RAM primitives used.",
+          "ramb36": "Number of 36 Kb block RAM primitives used.",
+          "static_power_w": "Estimated device static/leakage power in watts.",
+          "target_period_ns": "Requested clock period constraint in nanoseconds.",
+          "timing_met": "True when the worst reported setup slack is non-negative.",
+          "total_power_w": "Total estimated on-chip power in watts from Vivado power analysis.",
+          "uram": "UltraRAM block count used.",
+          "worst_slack_ns": "Worst setup slack in nanoseconds; positive means timing margin remains."
+        },
+        "generated_at": "2026-08-10T11:37:08.570710+00:00",
+        "key_values": {
+          "bram18_equiv": 2,
+          "design": "design_1_wrapper",
+          "design_state": "Routed",
+          "device": "xczu7ev-ffvc1156-2-e",
+          "dsp": 0,
+          "dynamic_power_w": 2.677,
+          "ff": 5413,
+          "fmax_mhz": 181.686,
+          "logic_lut": 3706,
+          "lut": 3989,
+          "pl_power_w": 0.729,
+          "pl_static_power_w": 0.593,
+          "power_confidence": "Medium",
+          "ps_power_w": 2.639,
+          "ps_static_power_w": 0.098,
+          "ramb18": 2,
+          "ramb36": 0,
+          "static_power_w": 0.692,
+          "target_period_ns": 10.0,
+          "timing_met": true,
+          "total_power_w": 3.368,
+          "uram": 0,
+          "worst_slack_ns": 4.496
+        },
+        "schema_version": 1,
+        "sources": {}
+      },
+      "hls": [
+        {
+          "estimated_clock_ns": 8.75,
+          "latency_cycles": {
+            "average": 253,
+            "best": 253,
+            "interval_max": 254,
+            "interval_min": 254,
+            "worst": 253
+          },
+          "loops": [
+            {
+              "latency_cycles": 225,
+              "name": "VITIS_LOOP_30_1_VITIS_LOOP_31_2",
+              "pipeline_depth": 16,
+              "pipeline_ii": 6,
+              "trip_count": 36
+            }
+          ],
+          "part": "xczu7ev-ffvc1156-2-e",
+          "project": "lightcnn_all_hls",
+          "report": "Backend/examples/lightcnn/build/hls/lightcnn_all_hls/solution1/syn/report/csynth.xml",
+          "report_sha256": "ee5889ec106b3a010c284817aa5ca42887ed6ec7563d65267f196046365c0c4e",
+          "resources": {
+            "bram18": 2,
+            "dsp": 0,
+            "ff": 2699,
+            "lut": 3782,
+            "uram": 0
+          },
+          "status": "passed",
+          "target_clock_ns": 10,
+          "top_function": "lightcnn_top",
+          "violations": [
+            {
+              "issue_type": "II Violation",
+              "loop": "VITIS_LOOP_30_1_VITIS_LOOP_31_2",
+              "source_location": "../../../../../../../../../vitis_hls_tcl_tests/lightcnn_all_src/lightcnn_all_three_core.cpp:30~../../../../../../../../../vitis_hls_tcl_tests/lightcnn_all_src/lightcnn_all_three_core.cpp:127",
+              "violation_type": "Resource Limitation"
+            }
+          ]
+        }
+      ],
+      "pipeline_status": {
+        "bitstream_generation": "passed",
+        "hls_compilation": "passed",
+        "hls_synthesis": "passed",
+        "ip_packaging": "passed",
+        "place_and_route": "passed",
+        "pynq_script_generation": "passed",
+        "rtl_cosimulation": "not_run",
+        "vivado_synthesis": "passed",
+        "fpga_execution": "passed",
+        "golden_vector_verification": "passed"
+      },
+      "artifacts": {
+        "result": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FFF/lightcnn_fff_results.json",
+          "bytes": 2630,
+          "sha256": "22dfd517cdcc78801e1af3f61793cb188bfefe6b1812dca8119fe18552a35931"
+        },
+        "pre_board_record": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/FFF.json",
+          "bytes": 9618,
+          "sha256": "96c389fa2c354163ad9e1526b93599bf54654e44b1aa5b9032682a692de7024d"
+        },
+        "runner": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FFF/measure_lightcnn_fff.py",
+          "bytes": 11775,
+          "sha256": "ce415ea6c610f51916f0837cf333711dc5f107545f827d44465441a7635e54af"
+        },
+        "bitstream": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FFF/lightcnn_partition_fff.bit",
+          "bytes": 19311213,
+          "sha256": "28c0d1f965e85a7f41c2c298f8b0538d8f83a44db403238581e9314b331c8399"
+        },
+        "hardware_handoff": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FFF/lightcnn_partition_fff.hwh",
+          "bytes": 309987,
+          "sha256": "18da94a032749448c4efa6b32e1135114db94ca42661420eaba55b50be4a57c9"
+        },
+        "vivado_summary": {
+          "path": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FFF/vivado_report_summary.json",
+          "bytes": 3288,
+          "sha256": "2868fe6a0b36e945df844dc23915a538f21c8f1fe2771ea606b832f5acb72144"
+        }
+      },
+      "evidence_records": {
+        "pynq_board": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FFF/lightcnn_fff_results.json",
+        "vivado_implementation": "Evaluation/LightCNN/KnowledgeBase/partition_specific_8_placements/FFF/vivado_report_summary.json",
+        "pre_board": "Evaluation/LightCNN/KnowledgeBase/pre_board_8_placements/placements/FFF.json"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "record_id": "lightcnn:task:A",
+      "workload": "LightCNN",
+      "implementation_stage": "task_characterization",
+      "task_id": "A",
+      "communication_intensity": "high",
+      "compute_intensity": "high",
+      "control_intensity": "low",
+      "input": {
+        "bytes": 64,
+        "dtype": "int8",
+        "name": "image",
+        "shape": [
+          8,
+          8
+        ]
+      },
+      "mac_count": 324,
+      "memory_intensity": "medium",
+      "output": {
+        "bytes": 36,
+        "dtype": "int8",
+        "name": "conv",
+        "shape": [
+          6,
+          6
+        ]
+      },
+      "task_type": "convolution"
+    },
+    {
+      "record_id": "lightcnn:task:B",
+      "workload": "LightCNN",
+      "implementation_stage": "task_characterization",
+      "task_id": "B",
+      "communication_intensity": "medium",
+      "compute_intensity": "low",
+      "control_intensity": "low",
+      "input": {
+        "bytes": 36,
+        "dtype": "int8",
+        "name": "conv",
+        "shape": [
+          6,
+          6
+        ]
+      },
+      "memory_intensity": "low",
+      "operation_count": 63,
+      "output": {
+        "bytes": 9,
+        "dtype": "int8",
+        "name": "pool",
+        "shape": [
+          3,
+          3
+        ]
+      },
+      "task_type": "relu_max_pool"
+    },
+    {
+      "record_id": "lightcnn:task:C",
+      "workload": "LightCNN",
+      "implementation_stage": "task_characterization",
+      "task_id": "C",
+      "communication_intensity": "low",
+      "compute_intensity": "low",
+      "control_intensity": "low",
+      "input": {
+        "bytes": 9,
+        "dtype": "int8",
+        "name": "pool",
+        "shape": [
+          9
+        ]
+      },
+      "mac_count": 18,
+      "memory_intensity": "low",
+      "output": {
+        "bytes": 2,
+        "dtype": "int8",
+        "name": "logits",
+        "shape": [
+          2
+        ]
+      },
+      "task_type": "dense_classification",
+      "weight_storage_bytes": 18
+    }
+  ]
+}
