@@ -112,10 +112,18 @@ python Evaluation/CNNImageProc/Run.py \
 This repository contains the Gen-TAS v1 code prepared by Mary Kong,
 August 2026.
 
-It accompanies the publication **"Gen-TAS: A Generative AI-Aided
-Hardware-Software Task Allocation Framework for FPGA-GPP Heterogeneous
-Systems"** by Mary Kong, Yuqin Zhao, Semih Vazgecen, Cristian Sestito, and
-Themis Prodromakis. When using this code, please cite the Gen-TAS publication.
+When using this code, please cite the Gen-TAS manuscript:
+```bibtex
+@misc{kong2026gentasgenerativeaiaidedhardwaresoftware,
+      title={Gen-TAS: A Generative AI-Aided Hardware-Software Task Allocation Framework for FPGA-GPP Heterogeneous Systems}, 
+      author={Mary Kong and Yuqin Zhao and Semih Vazgecen and Cristian Sestito and Themis Prodromakis},
+      year={2026},
+      eprint={2608.28160},
+      archivePrefix={arXiv},
+      primaryClass={cs.AR},
+      url={https://arxiv.org/abs/2608.28160}, 
+}
+```
 
 ## License
 
